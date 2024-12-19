@@ -1978,41 +1978,7 @@ section#footer-section {
 
 
 <!-- HTML -->
-<div style="text-align: center; margin-top: 30px;">
-  <h3>Did you like this portfolio?</h3>
-  <button id="love-button" style="background: none; border: none; cursor: pointer; outline: none;">
-    <i class="fa fa-heart" id="love-icon" style="font-size: 36px; color: gray;"></i>
-  </button>
-  <p id="love-count" style="font-size: 18px; margin-top: 10px; font-weight: bold;">0 Likes</p>
-</div>
 
-<!-- Add Font Awesome for the heart icon -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
-
-<!-- JavaScript -->
-<script>
-  let loveCount = 0;
-
-  // Check if the user has already liked
-  if (localStorage.getItem("liked") === "true") {
-    document.getElementById("love-icon").style.color = "#e74c3c"; // Make heart red
-    document.getElementById("love-button").disabled = true; // Disable the button
-  }
-
-  const loveButton = document.getElementById("love-button");
-  const loveIcon = document.getElementById("love-icon");
-  const loveCountDisplay = document.getElementById("love-count");
-
-  loveButton.addEventListener("click", () => {
-    if (localStorage.getItem("liked") !== "true") {
-      loveCount++; // Increment like count
-      loveCountDisplay.textContent = `${loveCount} Like${loveCount > 1 ? 's' : ''}`;
-      loveIcon.style.color = "#e74c3c"; // Change the heart color to red
-      localStorage.setItem("liked", "true"); // Store that the user has liked
-      loveButton.disabled = true; // Disable the button to prevent multiple likes
-    }
-  });
-</script>
 
 
 
