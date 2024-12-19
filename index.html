@@ -1987,120 +1987,77 @@ section#footer-section {
 
 
 
-
-
-	
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Like Button</title>
-    <!-- Font Awesome for the heart icon -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
-    <style>
-        .like-section {
-            text-align: center;
-            margin-top: 50px;
-            font-family: Arial, sans-serif;
-        }
-
-        .like-section h3 {
-            margin-bottom: 20px;
-        }
-
-        #like-button {
-            background: none;
-            border: none;
-            cursor: pointer;
-            outline: none;
-        }
-
-        #like-icon {
-            font-size: 48px;
-            color: gray;
-            transition: color 0.3s ease;
-        }
-
-        #like-count {
-            font-size: 24px;
-            margin-top: 10px;
-            font-weight: bold;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Like Button</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
-    <!-- Like Section -->
-    <div class="like-section">
-        <h3>Did you like this portfolio?</h3>
-        <button id="like-button">
-            <i class="fa fa-heart" id="like-icon"></i>
-        </button>
-        <p id="like-count">0 Likes</p>
-    </div>
+  <div style="text-align: center; margin-top: 30px;">
+    <h3>Did you like this portfolio?</h3>
+    <button id="love-button" style="background: none; border: none; cursor: pointer; outline: none;">
+      <i class="fa fa-heart" id="love-icon" style="font-size: 36px; color: gray;"></i>
+    </button>
+    <p id="love-count" style="font-size: 18px; margin-top: 10px; font-weight: bold;">0 Likes</p>
+  </div>
 
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-database.js"></script>
 
-    <!-- JavaScript -->
-    <script>
-        // Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyAzBLY5ls-li0BiImFPs5XcCtNojNemFCo",
-            authDomain: "liked-count.firebaseapp.com",
-            databaseURL: "https://liked-count-default-rtdb.firebaseio.com",
-            projectId: "liked-count",
-            storageBucket: "liked-count.firebasestorage.app",
-            messagingSenderId: "842374949422",
-            appId: "1:842374949422:web:c3451e5b854e7f70984dbf",
-        
-        };
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyAzBLY5ls-li0BiImFPs5XcCtNojNemFCo",
+      authDomain: "liked-count.firebaseapp.com",
+      databaseURL: "https://liked-count-default-rtdb.firebaseio.com",
+      projectId: "liked-count",
+      storageBucket: "liked-count.appspot.com",
+      messagingSenderId: "842374949422",
+      appId: "1:842374949422:web:c3451e5b854e7f70984dbf",
+      measurementId: "G-70YWKKL124"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+    const likesRef = db.ref('likes'); // Reference for likes
 
-        // Initialize Firebase
-        const app = firebase.initializeApp(firebaseConfig);
-        const db = firebase.database();
+    const loveButton = document.getElementById("love-button");
+    const loveIcon = document.getElementById("love-icon");
+    const loveCountDisplay = document.getElementById("love-count");
 
-        // Reference to the global like count in Firebase
-        const likeCountRef = db.ref('likeCount');
+    // Fetch the current like count from Firebase
+    likesRef.once("value", (snapshot) => {
+      let currentLikes = snapshot.val();
+      if (currentLikes) {
+        loveCountDisplay.textContent = `${currentLikes} Like${currentLikes > 1 ? 's' : ''}`;
+      } else {
+        loveCountDisplay.textContent = "0 Likes";
+      }
+    });
 
-        const likeButton = document.getElementById("like-button");
-        const likeIcon = document.getElementById("like-icon");
-        const likeCountDisplay = document.getElementById("like-count");
+    loveButton.addEventListener("click", () => {
+      // Change heart color to red
+      loveIcon.style.color = "#e74c3c";
 
-        // Track if the user has already liked
-        let userLiked = localStorage.getItem("liked") === "true";
+      // Increment the like count and update Firebase
+      likesRef.transaction((currentLikes) => {
+        return (currentLikes || 0) + 1; // Increment likes by 1
+      });
 
-        // Fetch the initial like count from Firebase
-        likeCountRef.on("value", (snapshot) => {
-            const likeCount = snapshot.val() || 0;
-            likeCountDisplay.textContent = `${likeCount} Like${likeCount !== 1 ? "s" : ""}`;
-        });
+      // Disable the button to prevent multiple clicks
+      loveButton.disabled = true;
+    });
 
-        // Set button state if the user already liked
-        if (userLiked) {
-            likeIcon.style.color = "#e74c3c"; // Set heart color to red
-            likeButton.disabled = true; // Disable button
-        }
-
-        // Handle like button click
-        likeButton.addEventListener("click", () => {
-            if (!userLiked) {
-                likeCountRef.transaction((currentLikes) => {
-                    return (currentLikes || 0) + 1; // Increment the like count
-                }).then(() => {
-                    likeIcon.style.color = "#e74c3c"; // Change heart color to red
-                    likeButton.disabled = true; // Disable button
-                    localStorage.setItem("liked", "true"); // Mark as liked
-                    userLiked = true;
-                }).catch((error) => {
-                    console.error("Error updating likes:", error);
-                });
-            }
-        });
-    </script>
+    // Listen for real-time updates in Firebase
+    likesRef.on("value", (snapshot) => {
+      let currentLikes = snapshot.val();
+      loveCountDisplay.textContent = `${currentLikes} Like${currentLikes > 1 ? 's' : ''}`;
+    });
+  </script>
 </body>
 </html>
+
 
 
 
