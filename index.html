@@ -2394,3 +2394,91 @@ section#footer-section {
       });
   });
 </script>
+
+
+
+
+
+
+
+
+
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Views</title>
+    <style>
+        .views-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .views-container .view-item {
+            margin: 0 15px;
+            color: #007bff;
+            text-align: center;
+        }
+        .views-container .view-item span {
+            font-size: 16px;
+            color: #655959;
+        }
+    </style>
+</head>
+<body>
+    <div class="views-container">
+        <div class="view-item">M: <span id="myViews">0</span></div>
+        <div class="view-item">O: <span id="othersViews">0</span></div>
+    </div>
+
+    <!-- Include Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js"></script>
+
+    <script>
+        // Firebase configuration (Replace with your Firebase project configuration)
+        const firebaseConfig = {
+            apiKey: "AIzaSyAzBLY5ls-li0BiImFPs5XcCtNojNemFCo",
+            authDomain: "liked-count.firebaseapp.com",
+            databaseURL: "https://liked-count-default-rtdb.firebaseio.com",
+            projectId: "liked-count",
+            storageBucket: "liked-count.appspot.com",
+            messagingSenderId: "842374949422",
+            appId: "1:842374949422:web:c3451e5b854e7f70984dbf",
+            measurementId: "G-70YWKKL124"
+        };
+
+        // Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+
+        // My Views (localStorage)
+        let myViews = localStorage.getItem('myViews') || 0;
+        myViews++;
+        localStorage.setItem('myViews', myViews);
+        document.getElementById('myViews').textContent = myViews;
+
+        // Others' Views (Firebase Realtime Database)
+        const othersViewsRef = firebase.database().ref('othersViews');
+        
+        // Increment others' views count if not the owner's profile
+        if (!localStorage.getItem('isMyProfile')) {
+            othersViewsRef.transaction((currentViews) => {
+                return (currentViews || 0) + 1;
+            });
+        }
+        localStorage.setItem('isMyProfile', true);
+
+        // Listen for real-time updates
+        othersViewsRef.on('value', (snapshot) => {
+            const othersViews = snapshot.val() || 0;
+            document.getElementById('othersViews').textContent = othersViews;
+        });
+    </script>
+</body>
+</html>
+
