@@ -1643,86 +1643,70 @@ function changeFraudImage(direction) {
 
 
 
-      <!DOCTYPE html>
-      <html lang="en">
-      <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Global Like Count</title>
-        <script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js"></script>
-      </head>
-      <body>
-        <div class="section" id="special-offer">
-          <h1 style="text-align: ;">Special Offer</h1>
-      
-          <!-- HTML -->
-          <div style="text-align: center; margin-top: 30px;">
-            <h3>Did you like this portfolio?</h3>
-            <button id="love-button" style="background: none; border: none; cursor: pointer; outline: none;">
-              <i class="fa fa-heart" id="love-icon" style="font-size: 36px; color: gray;"></i>
-            </button>
-            <p id="love-count" style="font-size: 18px; margin-top: 10px; font-weight: bold;">Loading...</p>
-          </div>
-      
-          <script>
-            // Firebase configuration (replace with your own credentials)
-            const firebaseConfig = {
-              apiKey: "AIzaSyDnvbX3-hTidBMvVXceTELHeTT6ArOdYyI",
-  authDomain: "count1-8bc86.firebaseapp.com",
-  databaseURL: "https://count1-8bc86-default-rtdb.firebaseio.com",
-  projectId: "count1-8bc86",
-  storageBucket: "count1-8bc86.firebasestorage.app",
-  messagingSenderId: "951674163070",
-  appId: "1:951674163070:web:084124a071d303592fed2f"
-            };
-      
-            // Initialize Firebase
-            const app = firebase.initializeApp(firebaseConfig);
-            const db = firebase.firestore(app);
-      
-            const loveButton = document.getElementById("love-button");
-            const loveIcon = document.getElementById("love-icon");
-            const loveCountDisplay = document.getElementById("love-count");
-      
-            // Fetch the initial like count
-            db.collection("likes").doc("portfolio").get().then(doc => {
-              if (doc.exists) {
-                const loveCount = doc.data().count;
-                loveCountDisplay.textContent = `${loveCount} Likes`;
-      
-                // Set the initial heart color based on the like count
-                if (loveCount > 11037) {
-                  loveIcon.style.color = "#e74c3c"; // Change heart to red if liked
-                }
-              } else {
-                loveCountDisplay.textContent = "0 Likes";
-              }
-            });
-      
-            // Update like count on button click
-            loveButton.addEventListener("click", () => {
-              // Increment the like count
-              db.collection("likes").doc("portfolio").update({
-                count: firebase.firestore.FieldValue.increment(1)
-              }).then(() => {
-                // Change the heart color to red when liked
-                loveIcon.style.color = "#e74c3c";
-                // Fetch the updated count
-                db.collection("likes").doc("portfolio").get().then(doc => {
-                  loveCountDisplay.textContent = `${doc.data().count} Likes`;
-                });
-              });
-            });
-          </script>
-      
-          <!-- Add Font Awesome for the heart icon -->
-          <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
-        </div>
-      </body>
-      </html>
-      
 
+
+
+
+
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+
+<div class="section" id="special-offer">
+  <h1 style="text-align: ;">Special Offer</h1>
+
+  <!-- Like Button Section -->
+  <div style="text-align: center; margin-top: 30px;">
+    <h3>Did you like this portfolio?</h3>
+    <button id="love-button" style="background: none; border: none; cursor: pointer; outline: none;">
+      <i class="fa fa-heart" id="love-icon" style="font-size: 36px; color: gray;"></i>
+    </button>
+    <p id="love-count" style="font-size: 18px; margin-top: 10px; font-weight: bold;">Loading...</p>
+  </div>
+
+  <!-- Add Font Awesome for the heart icon -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+
+  <script>
+    // Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyDnvbX3-hTidBMvVXceTELHeTT6ArOdYyI",
+      authDomain: "count1-8bc86.firebaseapp.com",
+      databaseURL: "https://count1-8bc86-default-rtdb.firebaseio.com",
+      projectId: "count1-8bc86",
+      storageBucket: "count1-8bc86.firebasestorage.app",
+      messagingSenderId: "951674163070",
+      appId: "1:951674163070:web:084124a071d303592fed2f"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const database = firebase.database();
+
+    // References
+    const loveButton = document.getElementById("love-button");
+    const loveIcon = document.getElementById("love-icon");
+    const loveCountDisplay = document.getElementById("love-count");
+
+    // Fetch the current like count
+    const likeCountRef = database.ref('likeCount');
+    likeCountRef.on('value', (snapshot) => {
+      const likeCount = snapshot.val() || 11037; // Default to 11037 if null
+      loveCountDisplay.textContent = `${likeCount} Likes`;
+    });
+
+    // Handle like button click
+    loveButton.addEventListener('click', () => {
+      likeCountRef.transaction((currentLikes) => {
+        if (currentLikes === null) {
+          return 11037 + 1; // If no value, start from 11037
+        }
+        return currentLikes + 1; // Increment like count
+      });
+      loveIcon.style.color = "#e74c3c"; // Change heart color to red
+    });
+  </script>
+</div>
 
 
 
@@ -1732,75 +1716,6 @@ function changeFraudImage(direction) {
 
 
 
-
-      <div class="section" id="special-offer">
-        <!-- Special Offer Header -->
-        <h1 >Special Offer</h1>
-      
-        <!-- HTML -->
-        <div style="text-align: center; margin-top: 30px;">
-          <h3>Did you like this portfolio?</h3>
-          <button id="love-button" style="background: none; border: none; cursor: pointer; outline: none;">
-            <i class="fa fa-heart" id="love-icon" style="font-size: 36px; color: gray;"></i>
-          </button>
-          <p id="love-count" style="font-size: 18px; margin-top: 10px; font-weight: bold;">11037 Likes</p>
-        </div>
-      
-        <!-- Add Font Awesome for the heart icon -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
-      
-        <!-- JavaScript -->
-        <script>
-          // Initialize the like count to 11037 if no value is stored in localStorage
-          let loveCount = 11037;
-      
-          // Check if there's a saved like count in localStorage
-          if (localStorage.getItem('loveCount')) {
-            loveCount = parseInt(localStorage.getItem('loveCount'));
-          }
-      
-          const loveButton = document.getElementById("love-button");
-          const loveIcon = document.getElementById("love-icon");
-          const loveCountDisplay = document.getElementById("love-count");
-      
-          // Set the initial displayed like count
-          loveCountDisplay.textContent = `${loveCount} Likes`;
-      
-          // Change the heart color if the portfolio has already been liked (if loveCount > initial)
-          if (loveCount > 11037) {
-            loveIcon.style.color = "#e74c3c"; // Change heart to red if liked
-          }
-      
-          loveButton.addEventListener("click", () => {
-            loveCount++; // Increment the like count
-            loveCountDisplay.textContent = `${loveCount} Likes`;
-            loveIcon.style.color = "#e74c3c"; // Change the heart color to red when clicked
-      
-            // Store the updated like count in local storage
-            localStorage.setItem('loveCount', loveCount);
-          });
-        </script>
-      
-        <!-- Portfolio Creation Offer -->
-        <div style="text-align: center; margin: 50px 0; padding: 20px; border: 2px dashed #000000; border-radius: 10px; background-color: #f9f9f9;">
-          <div style="font-size: 40px; color: #000; margin-bottom: 10px;">
-            <span class="fas fa-tags"></span>
-          </div>
-          <h3 style="font-size: 24px; color: #050000; margin-bottom: 10px;">Want a Portfolio Like This?</h3>
-          <p style="font-size: 18px; color: #060600; margin-bottom: 20px;">
-            I can create a professional portfolio for you! <br>
-            <strong>Special offer:</strong> 
-            <del style="color: #e74c3c;">₹3000</del> 
-            <span style="color: #4505c3;">₹500</span>.
-          </p>
-          <a href="https://www.linkedin.com/in/narendra-bariha/" 
-             target="_blank" 
-             style="display: inline-block; text-decoration: none; background-color: #0077b5; color: #fff; padding: 10px 20px; border-radius: 5px; font-size: 18px; font-weight: bold;">
-            Message Me on LinkedIn
-          </a>
-        </div>
-      </div>
-      
 
 
 
