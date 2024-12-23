@@ -2084,3 +2084,109 @@ function changeFraudImage(direction) {
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Views</title>
+    <style>
+        .views-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            font-size: 10px;
+            font-weight: bold;
+        }
+        .views-container .view-item {
+            margin: 0 15px;
+            color: #007bff;
+            text-align: center;
+        }
+        .views-container .view-item span {
+            font-size: 10px;
+            color: #655959;
+        }
+    </style>
+</head>
+<body>
+    <div class="views-container">
+        <div class="view-item">M: <span id="myViews">0</span></div>
+        <div class="view-item">O: <span id="othersViews">0</span></div>
+    </div>
+
+    
+    <script type="module">
+        // Import Firebase
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+        import { getDatabase, ref, onValue, runTransaction } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
+
+        // Firebase Configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDGEcN6tyCvDH6fcaylitRw_R2X0MOXxUA",
+            authDomain: "first1-652ef.firebaseapp.com",
+            databaseURL: "https://first1-652ef-default-rtdb.firebaseio.com",
+            projectId: "first1-652ef",
+            storageBucket: "first1-652ef.appspot.com",
+            messagingSenderId: "193166080297",
+            appId: "1:193166080297:web:2262e6e5abfb04b1fddf38"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+        // Fetch the total views for "others"
+        const othersRef = ref(database, 'totalViews/others');
+        const myRef = ref(database, 'totalViews/my');
+
+        // Initialize "my" and "others" views
+        function updateViewCounts() {
+            // Check localStorage to determine if this is a new visit
+            if (!localStorage.getItem('hasVisited')) {
+                runTransaction(othersRef, (currentViews) => {
+                    return (currentViews || 0) + 1;
+                });
+                localStorage.setItem('hasVisited', 'true');
+            }
+
+            // Update "my" views
+            runTransaction(myRef, (currentViews) => {
+                return (currentViews || 0) + 1;
+            });
+        }
+
+        // Listen for changes in the "my" views
+        onValue(myRef, (snapshot) => {
+            document.getElementById('myViews').innerText = snapshot.val() || 0;
+        });
+
+        // Listen for changes in the "others" views
+        onValue(othersRef, (snapshot) => {
+            document.getElementById('othersViews').innerText = snapshot.val() || 0;
+        });
+
+        // Initialize view counts
+        updateViewCounts();
+    </script>
+</body>
+</html>
+
+
