@@ -1,0 +1,2230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <title>Developed by Narendra Bariha</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      background-color: #f0f0f0;
+      color: #333;
+      cursor: ; /* Hides the cursor for the whole body */
+    }
+
+    .header {
+      text-align: center;
+      padding: 20px;
+      background-color: #0d6efd;
+      color: white;
+    }
+
+    .header h1, .header h2, .header h3 {
+      display: inline;
+      margin: 0 10px;
+      font-size: 1.5rem;
+    }
+
+    .header h1 {
+      font-size: 2rem;
+    }
+
+    .main-content {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .left-section {
+      width: 25%;
+      background-color: #f0f0f0;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      height: 100%;
+      border-right: 1px solid #ccc;
+    }
+
+    .left-section img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 3px solid #0d6efd;
+    }
+
+    .right-section {
+      margin-left: 25%;
+      width: 68%;
+      height: 100%;
+      overflow-y: auto;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+
+    
+    .section {
+      margin-bottom: 40px;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-box {
+      background-color: #8bb1ea;
+      color: rgb(2, 0, 0);
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    /* Sidebar only showing icons */
+    .sidebar {
+      position: fixed;
+      top: 20%;
+      right: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: transparent;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .sidebar a:hover {
+      background-color: #0d6efd;
+      color: white;
+      transform: scale(1.1);
+    }
+
+    .sidebar a i {
+      font-size: 20px;
+    }
+
+    .sidebar a:hover::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      left: -120%;
+      padding: 5px 10px;
+      background-color: #0d6efd;
+      color: white;
+      font-size: 12px;
+      border-radius: 5px;
+      white-space: nowrap;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    @media screen and (max-width: 768px) {
+      .main-content {
+        flex-direction: column;
+      }
+
+      .left-section {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-right: none;
+      }
+
+      .right-section {
+        margin-left: 0;
+        width: 100%;
+      }
+
+      .sidebar {
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="main-content">
+    <!-- Left Section -->
+    <div class="left-section">
+      <img src="images/Picture22.png" alt="Profile Picture">
+      <h2>Narendra Bariha</h2>
+      <h3>Data Aspirant</h3>
+      <a href="https://drive.google.com/file/d/1ICASTqAp1oIErBHZeTlcn8PDwbYNuyU5/view?usp=drive_link" 
+   target="_blank" rel="noopener noreferrer" class="resume-button">
+   Resume <i class="fa-solid fa-download"></i>
+</a>
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script> -->
+
+<style>
+  .resume-button {
+    padding: 6px 10px;
+    background-color: #00ff84;
+    color: #000;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  .resume-button:hover {
+    background-color: #0077b5;
+    color: #fff;
+  }
+</style>
+
+   
+   
+    </div>
+
+    <!-- Right Section -->
+    <div class="right-section">
+      <!-- Home Section -->
+      <div class="section" id="home">
+        <h1 style="text-align: ;">Welcome 🙏</h1>
+        
+        <!-- Centering the name and making it bold -->
+        <div class="name-container" style="text-align: center; margin-top: 20px; font-size: 1.5rem;">
+          <span style=" font-size: 4rem; font-weight: bold;"> I am</span> <span style="color: #018456; font-size: 4rem; font-weight: bold;"> Narendra Bariha</span>
+        </div>
+        
+        <!-- Data Aspirant -->
+        <div class="title-container" style="text-align: center; margin-top: 10px;">
+          <h2>𝐃𝐚𝐭𝐚 𝐀𝐬𝐩𝐢𝐫𝐚𝐧𝐭</h2>
+        </div>
+        
+       <!-- Social Media Icons with Circular Background -->
+<div class="social-icons" style="margin-top: 20px; display: flex; justify-content: center; gap: 15px;">
+  <!-- YouTube -->
+  <a href="https://www.youtube.com/@narendra45_78" target="_blank" class="social-link youtube" title="YouTube" style="text-decoration: none;">
+    <div style="border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; transition: background-color 0.3s;">
+      <i class="fa-brands fa-youtube" style="font-size: 24px; color: #FF0000;"></i>
+    </div>
+  </a>
+  <!-- LinkedIn -->
+  <a href="https://www.linkedin.com/in/narendra-bariha/" target="_blank" class="social-link linkedin" title="LinkedIn" style="text-decoration: none;">
+    <div style="border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; transition: background-color 0.3s;">
+      <i class="fa-brands fa-linkedin" style="font-size: 24px; color: #0077B5;"></i>
+    </div>
+  </a>
+  <!-- GitHub -->
+  <a href="https://github.com/narendrabariha" target="_blank" class="social-link github" title="GitHub" style="text-decoration: none;">
+    <div style="border-radius: 50%; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; transition: background-color 0.3s;">
+      <i class="fa-brands fa-github" style="font-size: 24px; color: #333;"></i>
+    </div>
+  </a>
+</div>
+
+<!-- Add this CSS for hover effects -->
+<style>
+  .social-link div {
+    background-color: #bebdbd; /* Default light gray background */
+  }
+
+  .social-link:hover div {
+    background-color: transparent; /* Ensures smooth hover transition */
+  }
+
+  .youtube:hover div {
+    background-color: #b8c903; /* YouTube red */
+  }
+
+  .linkedin:hover div {
+    background-color: #b8c903; /* LinkedIn blue */
+  }
+
+  .github:hover div {
+    background-color: #b8c903; /* GitHub dark gray */
+  }
+
+  .social-link div:hover i {
+    color: rgb(219, 13, 13); /* Changes icon color on hover for contrast */
+  }
+
+  .social-link div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+
+  /* Optional: Add a smooth border-color change on hover */
+  .social-link div {
+    border: 2px solid transparent; /* Default border */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  }
+
+  .social-link div:hover {
+    border-color: rgb(231, 22, 22);
+  }  
+</style>
+
+
+        </div>
+      
+      
+               
+      </section>
+      
+
+      <!-- About Section -->
+      <div class="section" id="about">
+        <h1>About Me</h1>
+        <div class="col-12">
+          <p style="font-size: 15px; font-weight: 500; text-align: justify; line-height: 1.4; margin-bottom: 10px;">
+              I am a 𝐌𝐞𝐜𝐡𝐚𝐧𝐢𝐜𝐚𝐥 𝐄𝐧𝐠𝐢𝐧𝐞𝐞𝐫𝐢𝐧𝐠 graduate with a keen interest in Artificial Intelligence, Machine Learning, and Deep Learning. My engineering background has equipped me with a strong foundation in analytical thinking and problem-solving, which I now channel into the dynamic fields of data science and advanced analytics.
+          </p>
+          <p style="font-size: 15px; font-weight: 500; text-align: justify; line-height: 1.4; margin-bottom: 10px;">
+              My transition from mechanical engineering to data science has been driven by a passion for utilizing advanced techniques to extract valuable insights and foster innovation. This journey has been inspired by my eagerness to apply analytical methods and data-driven strategies to solve complex problems and contribute to groundbreaking advancements.
+          </p>
+          <p style="font-size: 15px; font-weight: 500; text-align: justify; line-height: 1.4; margin-bottom: 10px;">
+              I am a quick learner and constantly seeking new challenges to expand my skill set. Eager to leverage my technical expertise, I am committed to harnessing these skills to drive impactful insights and innovative solutions in data science.
+          </p>
+      </div>
+  </div>
+
+      <!-- Education Section -->
+      <div class="section" id="education">
+        <h1>Education</h1>
+        <p><strong>B.E. in Mechanical Engineering</strong></p>
+        <p>Tulsiramji Gaikwad-Patil College of Engineering and Technology, Nagpur University</p>
+        <p><strong>CGPA:</strong> 8.3</p>
+      </div>
+
+      <!-- Skills Section -->
+      <div class="section" id="skills">
+        <h1>Technical Skills</h1>
+        <div class="skills">
+          <div class="skill-box">Excel</div>
+          <div class="skill-box">Power BI</div>
+          <div class="skill-box">Tableau</div>
+          <div class="skill-box">Python</div>
+          <div class="skill-box">SQL</div>
+          <div class="skill-box">Machine Learning</div>
+          <div class="skill-box">Deep Learning</div>
+          <div class="skill-box">N.L.P</div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="section" id="certificates">
+        <h1>Certificates & Awards </h1>
+        
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificates Showcase</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .col-md-4 {
+            flex: 0 0 calc(33.333% - 20px);
+            box-sizing: border-box;
+        }
+
+        .blog-entry {
+            position: relative;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .blog-entry:hover {
+            border-color: #007bff;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .blog-entry .block-20 {
+            display: block;
+            background-size: cover;
+            background-position: center;
+            height: 0;
+            padding-bottom: 75%;
+        }
+
+        .heading {
+            text-align: center;
+            margin: 10px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .heading a {
+            text-decoration: none;
+            color: black;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .blog-entry:hover .heading a {
+            color: #007bff;
+        }
+
+        @media (max-width: 768px) {
+            .col-md-4 {
+                flex: 0 0 100%;
+            }
+        }
+
+        /* Modal styles */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            animation: fadeIn 0.3s;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border: 3px solid #fff;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+        <!-- Certificate Example -->
+        <div class="col-md-4">
+          <div class="blog-entry">
+              <a class="block-20" 
+                 style="background-image: url('images/1.png'); background-size: cover; background-position: center; 
+                        width: 100%; height: 0; padding-bottom: 75%;"
+                 onclick="openModal('images/1.png'); return false;">
+              </a>
+              <div class="text mt-3">
+                  <h3 class="heading">
+                      <a href="https://drive.google.com/file/d/1QkWVJrrUiYQDWrHOxGuWl5FIBqC4NYKr/view" target="_blank" rel="noopener noreferrer">
+                          Data Science by Tutedude
+                      </a>
+                  </h3>
+              </div>
+          </div>
+      </div>
+      
+      <div class="col-md-4">
+          <div class="blog-entry">
+              <a class="block-20" 
+                 style="background-image: url('images/narendra-ds-certificate.png'); background-size: cover; background-position: center; 
+                        width: 100%; height: 0; padding-bottom: 75%;"
+                 onclick="openModal('images/narendra-ds-certificate.png'); return false;">
+              </a>
+              <div class="text mt-3">
+                  <h3 class="heading">
+                      <a href="https://drive.google.com/file/d/1VYBuUsch5E8RQ5oT9WerD35wP7_uYFmW/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                          Data Science by Coding Square
+                      </a>
+                  </h3>
+              </div>
+          </div>
+      </div>
+      
+      <div class="col-md-4">
+          <div class="blog-entry">
+              <a class="block-20" 
+                 style="background-image: url('images/DS Scala.jpg'); background-size: cover; background-position: center; 
+                        width: 100%; height: 0; padding-bottom: 75%;"
+                 onclick="openModal('images/DS Scala.jpg'); return false;">
+              </a>
+              <div class="text mt-3">
+                  <h3 class="heading">
+                      <a href="https://drive.google.com/file/d/1NofW9qn2W73I2XI0XZeVnhqqn35Rf7jj/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                          Data Science by Cognitive Class
+                      </a>
+                  </h3>
+              </div>
+          </div>
+      </div>
+      
+      <div class="col-md-4">
+          <div class="blog-entry">
+              <a class="block-20" 
+                 style="background-image: url('images/Masters in Data Science Certificate _page-0001.jpg'); background-size: cover; background-position: center; 
+                        width: 100%; height: 0; padding-bottom: 141%;"
+                 onclick="openModal('images/Masters in Data Science Certificate _page-0001.jpg'); return false;">
+              </a>
+              <div class="text mt-3">
+                  <h3 class="heading">
+                      <a href="https://drive.google.com/file/d/1iBUc4r6B3yXG2dcj1jYWDJ2FrSHfM-Sr/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                          Master in Data Science by TopMentor
+                      </a>
+                  </h3>
+              </div>
+          </div>
+      </div>
+      
+      <div class="col-md-4">
+          <div class="blog-entry">
+              <a class="block-20" 
+                 style="background-image: url('images/Data Analytics Certificate_page-0001.jpg'); background-size: cover; background-position: center; 
+                        width: 100%; height: 0; padding-bottom: 141%;"
+                 onclick="openModal('images/Data Analytics Certificate_page-0001.jpg'); return false;">
+              </a>
+              <div class="text mt-3">
+                  <h3 class="heading">
+                      <a href="https://drive.google.com/file/d/1-xbHn1sgx0b3ZgL3B927yAArmK5iHsct/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                          Data Analytics by TopMentor
+                      </a>
+                  </h3>
+              </div>
+          </div>
+      </div>
+      
+      <div class="col-md-4">
+          <div class="blog-entry">
+              <a class="block-20" 
+                 style="background-image: url('images/Internship Certificate_page-0001.jpg'); background-size: cover; background-position: center; 
+                        width: 100%; height: 0; padding-bottom: 141%;"
+                 onclick="openModal('images/Internship Certificate_page-0001.jpg'); return false;">
+              </a>
+              <div class="text mt-3">
+                  <h3 class="heading">
+                      <a href="https://drive.google.com/file/d/1ZFLifNSfwMGY2oI17GYYOnGeT1enzf2F/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                          Data Science Intern at Access Million
+                      </a>
+                  </h3>
+              </div>
+          </div>
+      </div>
+      
+      <!-- Third Row -->
+      <div class="col-md-4">
+          <div class="blog-entry">
+              <a class="block-20" 
+                 style="background-image: url('images/hp1.png'); background-size: cover; background-position: center; 
+                        width: 100%; height: 0; padding-bottom: 75%;"
+                 onclick="openModal('images/hp1.png'); return false;">
+              </a>
+              <div class="text mt-3">
+                  <h3 class="heading">
+                      <a href="https://drive.google.com/file/d/1ahKNW4xspSJ7DC__xXSE2djqRKWOkJhd/view" target="_blank" rel="noopener noreferrer">
+                          Data Science by HP Life
+                      </a>
+                  </h3>
+              </div>
+          </div>
+      </div>
+      
+      <div class="col-md-4">
+          <div class="blog-entry">
+              <a class="block-20" 
+                 style="background-image: url('images/accenture.png'); background-size: cover; background-position: center; 
+                        width: 100%; height: 0; padding-bottom: 75%;"
+                 onclick="openModal('images/accenture.png'); return false;">
+              </a>
+              <div class="text mt-3">
+                  <h3 class="heading">
+                      <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Accenture%20North%20America/hzmoNKtzvAzXsEqx8_Accenture%20North%20America_cDFrmT59L5WTstvKw_1728074341604_completion_certificate.pdf" target="_blank" rel="noopener noreferrer">
+                          Accenture Forage Intern
+                      </a>
+                  </h3>
+              </div>
+          </div>
+      </div>
+      
+      <div class="col-md-4">
+          <div class="blog-entry">
+              <a class="block-20" 
+                 style="background-image: url('images/technohack.png'); background-size: cover; background-position: center; 
+                        width: 100%; height: 0; padding-bottom: 75%;"
+                 onclick="openModal('images/technohack.png'); return false;">
+              </a>
+              <div class="text mt-3">
+                  <h3 class="heading">
+                      <a href="https://drive.google.com/file/d/1XqDzuQHit_xDxF3r3rOJb1-wPsGQujgG/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                          Data Science Intern 
+                      </a>
+                  </h3>
+              </div>
+          </div>
+       </div>
+  
+
+          
+
+    <!-- Modal for Zoom -->
+    <div id="imageModal" class="modal" style="display: none;" onclick="closeModal()">
+        <img id="modalImage" src="" alt="Certificate">
+    </div>
+
+    <script>
+        // Function to open the modal
+        function openModal(imageUrl) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            modal.style.display = 'flex';
+            modalImage.src = imageUrl;
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
+
+</div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section" id="projects">
+      <h1>My Projects</h1>
+       
+        <p style="color: rgb(11, 10, 10);">
+          Just click below "
+          <span style="color: rgb(18, 5, 200);">𝐒𝐞𝐞 𝐌𝐲 𝐖𝐨𝐫𝐤</span> "
+          on Data Science projects, including Excel, SQL, Python, Power BI, Tableau & ML, DL.
+        </p>
+        
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+<style>
+ 
+  /* Disable body scroll */
+  body.no-scroll {
+    overflow: hidden;
+  }
+
+  /* Popup Modal Styles */
+  .popup-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(218, 237, 241, 0.9);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+  }
+
+  .popup-content {
+    background-color: #ffffff;
+    width: 90%;
+    max-width: 1200px;
+    height: 90%;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    overflow-y: auto;
+  }
+
+  .popup-header {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ffffff; /* Font color */
+    background-color: #0c59a6; /* Background color */
+    width: fit-content; /* Adjustable width */
+    margin: 0 auto; /* Center the div horizontally */
+    padding: 5px; /* Add some padding for better appearance */
+    border-radius: 5px; /* Optional: Rounded corners */
+}
+
+
+
+.headline {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0 10px;
+    color: #ffffff;
+    background-color: #68018b;
+    padding: 5px;
+    width: fit-content; /* Automatically adjusts to the content */
+    border-radius: 5px;
+    
+}
+
+
+  .project-details {
+    text-align: justify;
+    font-size: 18px;
+    line-height: 1.3;
+    margin-bottom: 20px;
+  }
+
+  .tools-used {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .tools-used a {
+    color: #3498db;
+    text-decoration: none;
+  }
+
+  .tools-used a:hover {
+    text-decoration: underline;
+  }
+
+  .project-insights {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .insight-text {
+    flex: 1;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .image-container {
+    text-align: center;
+    border: 2px solid #989393;
+    border-radius: 10px;
+    padding: 10px;
+    height: 550px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .image-container img {
+    max-width: 100%;
+    height: 80%;
+    object-fit: contain;
+  }
+
+  .navigation-buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .navigation-buttons button {
+    background-color: #3498db;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .navigation-buttons button:hover {
+    background-color: #2980b9;
+  }
+
+  .presentation-container {
+    border: 2px solid #a09d9d;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  .presentation-container iframe {
+    width: 100%;
+    height: 600px;
+    border: none;
+    border-radius: 10px;
+  }
+
+
+  .dashboard-container {
+    border: 2px solid #9a9797;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  .dashboard-container iframe {
+    width: 100%;
+    height: 600px;
+    border: none;
+    border-radius: 10px;
+  }
+  .close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: #f10909;
+    cursor: pointer;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects Grid</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+  }
+
+  .projects-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 23px;
+    padding: 10px;
+    justify-items: center;
+  }
+
+  .project-card {
+    text-align: center;
+    background-color: #ccc4c4;
+    border-radius: 7px;
+    padding: 8px;
+    max-width: 450px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+  }
+
+  .project-card img {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .project-card p {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .project-card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .projects-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .projects-container {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+
+  <div class="projects-container">
+    <div class="project-card" onclick="openProjectModal()">
+      <img src="images/Z0.png" alt="Zomato Data Analysis">
+      <p>Zomato Data Analysis</p>
+    </div>
+    <div class="project-card" onclick="openSocialBuzzModal()">
+      <img src="images/a0.png" alt="Social Buzz Analysis">
+      <p>Social Buzz Analysis</p>
+    </div>
+    <div class="project-card" onclick="openDiwaliModal()">
+      <img src="images/d0.png" alt="Diwali Sales Analysis">
+      <p>Diwali Sales Analysis</p>
+    </div>
+    <div class="project-card" onclick="openLayoffModal()">
+      <img src="images/l0.png" alt="Layoff Analysis">
+      <p>Layoff Analysis</p>
+    </div>
+    <div class="project-card" onclick="openEcommerceModal()">
+      <img src="images/ee0.png" alt="E-commerce Sales Analysis">
+      <p>E-commerce Sales Analysis</p> 
+    </div>
+    <div class="project-card" onclick="openFraudDetectionModal()">
+      <img src="images/c0.png" alt="Fraud Transaction Detection ">
+      <p>Fraud Transaction Detection </p> 
+    </div>
+  </div>
+
+<!-- Include your modal code and JavaScript here -->
+
+
+<section class="ftco-section project-section ftco-no-pb text-justify" >
+
+<!-- Popup Modal -->
+<div id="project-modal" class="popup-modal" onclick="closePopup(event)">
+  <div class="popup-content" onclick="event.stopPropagation()">
+    <span class="close-popup" onclick="closePopup()">&times;</span>
+
+    <!-- Header -->
+    <div class="popup-header">Zomato Data Analysis</div>
+
+
+    <!-- Project Details Section -->
+    <div class="headline">Project Details:</div>
+    <div class="project-details">
+      Zomato has an average of 17.5 million monthly transacting customers for its food delivery business. Additionally, the average monthly active food delivery restaurant partners on Zomato's platform have also increased by 8.7% year-on-year, growing from 208,000 to 226,000.<br>
+      This dataset provides insights into Zomato's food delivery operations, including restaurant types, customer preferences, votes, ratings, and approximate costs for two people. Through analyzing this data, we can uncover key trends in online ordering, customer behavior, and restaurant popularity.
+    </div>
+
+    <!-- Tools Used -->
+    <div class="tools-used">
+    
+      <b>Tools Used:</b> 
+      <span style="background-color: #ffcc00; padding: 2px 5px; border-radius: 3px;">Python</span> 
+      <span style="background-color: #0070c0; color: #000000; padding: 2px 5px; border-radius: 3px;">PowerBI</span> 
+      <span style="background-color: #d04a02; color: #060000; padding: 2px 5px; border-radius: 3px;">PowerPoint</span>
+      <br>
+
+      
+      <b>Libraries Used:</b> NumPy, Pandas, Matplotlib, Seaborn<br>
+      <b>Analysis Performed :</b> Exploratory Data Analysis (EDA), Data Visualization, Statistical Analysis<br>
+      <b>Project Engagement :</b> <a href="https://www.linkedin.com/posts/narendra-bariha_datascience-analytics-zomato-activity-7240671773191528448-Dxit?utm_source=share&utm_medium=member_desktop" target="_blank">View</a><br>
+      <b>GitHub :</b> <a href="https://github.com/narendrabariha/E.D.A.----Zomato-Data-Analysis/blob/main/Zomato%20data%20analysis.ipynb" target="_blank">View Code</a>
+    </div>
+
+    <!-- Project Insights Section -->
+    <div class="headline">Project Insights:</div>
+    <div class="image-container">
+      <img id="project-image" src="" alt="Project Insight">
+      <div class="insight-text" id="insight-text">
+        <!-- Insight text dynamically inserted here -->
+      </div>
+
+      <div class="navigation-buttons">
+        <button onclick="changeImage(-1)">Prev</button>
+        <button onclick="changeImage(1)">Next</button>
+      </div>
+    </div>
+
+    <!-- Presentation Section -->
+    <div class="headline">Presentation:</div>
+    <div class="presentation-container">
+      <iframe id="youtube-video" src="https://www.youtube.com/embed/cg9aRnDoxuY" allowfullscreen></iframe>
+    </div>
+
+    <!-- Live Interactive Dashboard Section -->
+    <div class="headline">Live Interactive Dashboard :</div>
+    <div class="dashboard-container">
+      <iframe src="https://app.powerbi.com/view?r=eyJrIjoiYmNiOTAyY2YtMGNiOC00Y2I0LWJmM2ItZWI1OTcwOTY5MDMzIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+  const projectDetails = {
+    insights: [
+      {
+        image: 'images/Z1.png',
+        text: `The majority of customers prefer ordering from Dining restaurants, with a total of 110 orders. Cafes follow as the second most popular type, with 23 orders. Other types of restaurants have 8 orders. Buffet restaurants are the least preferred with 7 orders.`,
+      },
+      {
+        image: 'images/Z2.png',
+        text: `The majority of votes are received by Dining restaurants, with a total of 20,363 votes. Other types of restaurants follow with 9,367 votes. Cafes have 6,434 votes. Buffet restaurants have the fewest votes, with 3,028 votes.`,
+      },
+      {
+        image: 'images/Z3.png',
+        text: `The majority of restaurants have received a rating of 3.8, which is the most frequent rating with 20 occurrences. This indicates that the average customer satisfaction level is relatively high but not exceptional. Additionally, ratings of 3.7 and 3.3 are also common, suggesting a general concentration of ratings in the mid to upper range of the scale.`,
+      },
+      {
+        image: 'images/Z4.png',
+        text: `The majority of couples spend around 300 rupees on their food orders, with 23 occurrences at this price point. The next most common spending amounts are 200 rupees and 150 rupees, each with 16 occurrences, followed by orders costing 400 rupees with 15 occurrences.`,
+      },
+      {
+        image: 'images/Z5.png',
+        text: `Online orders have received the highest rating of 4.6 (51.7%), indicating a strong customer preference and satisfaction when ordering online. Offline orders, while still well-rated, have received a slightly lower maximum rating of 4.3 (48.3%).`,
+      },
+      {
+        image: 'images/Z6.png',
+        text: `Dining restaurants received significantly more offline orders, with 77 offline orders compared to only 33 online orders. This indicates that customers prefer placing orders in person at dining restaurants, making them a great target for offline offers and promotions.`,
+      },
+      {
+        image: 'images/Z7.png',
+        text: `Empire Restaurant leads with the highest number of votes (4,884), followed by Meghana Foods (4,401) and Onesta (2,556). This indicates these restaurants are highly popular and well-rated by customers. Restaurants like San Churro Cafe and Gustoes Beer House have fewer votes (<1,000), suggesting they have a smaller customer base or appeal.`,
+      },
+      {
+        image: 'images/Z8.png',
+        text: `Onesta stands out with the highest rating of 4.6 in the top 10 restaurants, followed by Empire Restaurant and Meghana Foods, each with a solid 4.4 rating.`,
+      },
+      {
+        image: 'images/Z9.png',
+        text: `The restaurants are grouped with varying costs, mostly hovering around 800 to 950 units. "Ayda Persian Kitchen" has the highest cost at 950, while several others`,
+      },
+      { image: 'images/Z10.png', text: `` },
+    { image: 'images/Z11.png', text: `` },
+    ],
+
+    currentIndex: 0
+  };
+
+  function openProjectModal() {
+    document.getElementById("project-modal").style.display = "flex";
+    document.body.classList.add('no-scroll');
+    displayInsight();
+  }
+
+  function closePopup() {
+    document.getElementById("project-modal").style.display = "none";
+    document.body.classList.remove('no-scroll');
+    const youtubeVideo = document.getElementById("youtube-video");
+    youtubeVideo.src = youtubeVideo.src; // Stops the video
+  }
+
+  function changeImage(direction) {
+    projectDetails.currentIndex += direction;
+    if (projectDetails.currentIndex < 0) {
+      projectDetails.currentIndex = projectDetails.insights.length - 1;
+    } else if (projectDetails.currentIndex >= projectDetails.insights.length) {
+      projectDetails.currentIndex = 0;
+    }
+    displayInsight();
+  }
+
+  function displayInsight() {
+    const currentInsight = projectDetails.insights[projectDetails.currentIndex];
+    document.getElementById('project-image').src = currentInsight.image;
+    document.getElementById('insight-text').innerText = currentInsight.text;
+  }
+</script>
+
+
+
+  <!-- Social Buzz Analysis -->
+
+
+  <!-- Popup Modal for Social Buzz Analysis -->
+  <div id="social-buzz-modal" class="popup-modal" onclick="closeSocialBuzzPopup(event)">
+    <div class="popup-content" onclick="event.stopPropagation()">
+      <span class="close-popup" onclick="closeSocialBuzzPopup()">&times;</span>
+      <!-- Header -->
+      <div class="popup-header">Social Buzz Analysis</div>
+
+      <!-- Project Details Section -->
+      <div class="headline">Project Details:</div>
+      <div class="project-details">
+        Social Buzz, a San Francisco-based social media and content creation platform founded in 2010, has grown to over 500 million active users monthly. Specializing in anonymous user engagement with over 100 reaction types, the platform generates massive unstructured data from 100,000 daily content posts.As they plan an IPO next year, Social Buzz seeks external expertise to manage scaling challenges, optimize big data practices, and ensure IPO readiness. With 200 out of 250 employees focused on maintaining their complex technology, they aim to leverage insights from experienced advisory firms to streamline operations and adopt best-in-class data practices.
+      </div>
+
+      <!-- Tools Used -->
+      <div class="tools-used">
+        <b>Tools Used:</b> <span style="background-color: #217346; color: #ffffff; padding: 2px 5px; border-radius: 3px;">MS Excel</span><br>
+        <b>Analysis Performed :</b> Data Cleaning, Data Visualization, Statistical Analysis, VLOOKUP, XLOOKUP, Pivot Tables, Data Transformation <br>
+        <b>Project Engagement :</b> <a href="https://www.linkedin.com/posts/narendra-bariha_dataanalytics-datavisualization-accenture-activity-7249063447185813506-MxvA?utm_source=share&utm_medium=member_desktop" target="_blank">View</a><br> 
+        <b>GitHub :</b> <a href="https://github.com/narendrabariha/E.D.A-------Accenture-North-America-Data-Analytics-Visualization-Job-Simulation" target="_blank">View Code</a>
+    
+      </div>
+
+      <!-- Project Insights Section -->
+      <div class="headline">Project Insights:</div>
+      <div class="image-container">
+        <img id="social-buzz-image" src="" alt="Social Buzz Insight">
+        <div class="insight-text" id="social-buzz-insight-text">
+          <!-- Insight text dynamically inserted here -->
+        </div>
+
+        <div class="navigation-buttons">
+          <button onclick="changeSocialBuzzImage(-1)">Prev</button>
+          <button onclick="changeSocialBuzzImage(1)">Next</button>
+        </div>
+      </div>
+
+      <!-- Presentation Section -->
+      <div class="headline">Presentation:</div>
+      <div class="presentation-container">
+        <iframe id="social-buzz-video" src="https://www.youtube.com/embed/DYTG-dgGZxE" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript for Social Buzz Analysis -->
+  <script>
+    const socialBuzzDetails = {
+      insights: [
+        { image: 'images/a1.png', text: `Total unique Category is 16` },
+        { image: 'images/a2.png', text: `The top content categories for user engagement are Animals (74,965 posts), Science (71,168), Healthy Eating (69,339), Technology (68,738), and Food (66,676). These offer prime opportunities for targeted campaigns to maximize engagement.
+` },
+        { image: 'images/a3.png', text: ` May has the highest number of posts with 2,138, followed by August with 2,114, and January with 2,126. Other  months are December with 2,092 posts and July with 2,070. These months show increased engagement, making them ideal for maximizing marketing efforts.
+` },
+        { image: 'images/a4.png', text: `The analysis shows that photos (6,589) and videos (6,245) are the most popular content types, followed by GIFs (6,079). Audio content (5,660) has the least engagement, highlighting the need to prioritize photos and videos in campaigns.` },
+        { image: 'images/a5.png', text: `Sentiment analysis reveals that all content types generate more positive reactions than negative ones. Photos lead with 3,700 positive scores, followed by videos (3,510), GIFs (3,381), and audio (3,216). Negative and neutral scores are consistently lower across all types.` },
+        { image: 'images/a6.png', text: `` },],
+    };
+
+    let currentSocialBuzzIndex = 0;
+
+    function openSocialBuzzModal() {
+      document.getElementById('social-buzz-insight-text').textContent = socialBuzzDetails.insights[currentSocialBuzzIndex].text;
+      document.getElementById('social-buzz-image').src = socialBuzzDetails.insights[currentSocialBuzzIndex].image;
+      document.getElementById('social-buzz-modal').style.display = 'flex';
+      document.body.classList.add('no-scroll'); // Disable body scroll
+    }
+
+    function closeSocialBuzzPopup(event) {
+      document.getElementById('social-buzz-modal').style.display = 'none';
+      const iframe = document.getElementById('social-buzz-video');
+      iframe.src = iframe.src; // Pause YouTube video
+      document.body.classList.remove('no-scroll'); // Re-enable body scroll
+    }
+
+    function changeSocialBuzzImage(direction) {
+      currentSocialBuzzIndex = (currentSocialBuzzIndex + direction + socialBuzzDetails.insights.length) % socialBuzzDetails.insights.length;
+      document.getElementById('social-buzz-insight-text').textContent = socialBuzzDetails.insights[currentSocialBuzzIndex].text;
+      document.getElementById('social-buzz-image').src = socialBuzzDetails.insights[currentSocialBuzzIndex].image;
+    }
+  </script>
+
+
+
+
+
+<!-- Diwali Sales Analysis -->
+
+
+<!-- Popup Modal for Diwali Sales Analysis -->
+<div id="diwali-modal" class="popup-modal" onclick="closeDiwaliPopup(event)">
+  <div class="popup-content" onclick="event.stopPropagation()">
+    <span class="close-popup" onclick="closeDiwaliPopup()">&times;</span>
+    <!-- Header -->
+    <div class="popup-header">Diwali Sales Analysis</div>
+
+    <!-- Project Details Section -->
+    <div class="headline">Project Details:</div>
+    <div class="project-details">
+      The dataset includes detailed information on customer transactions, capturing key attributes such as user ID, customer name, product ID, gender, age group, marital status, state, zone, occupation, product category, number of orders, and total amount spent.<br>
+      This comprehensive dataset enables in-depth analysis of sales patterns, customer demographics, and product performance during the Diwali season. By examining these attributes, businesses can gain insights into customer behavior, optimize inventory management, and enhance targeted marketing strategies.
+    </div>
+
+    <!-- Tools Used -->
+    <div class="tools-used">
+      <b>Tools Used:</b> 
+<span style="background-color: #ffcc00; color: #070000; padding: 2px 5px; border-radius: 3px;">Python</span> 
+<span style="background-color: #00c4cc; color: #010000; padding: 2px 5px; border-radius: 3px;">Canva</span>
+<br>
+
+      <b>Libraries Used:</b> NumPy, Pandas, Matplotlib, Seaborn<br>
+      <b>Analysis Performed:</b> Exploratory Data Analysis (EDA), Data Visualization, Statistical Analysis<br>
+      <b>Project Engagement :</b> <a href="https://www.linkedin.com/posts/narendra-bariha_dataanalysis-diwalisales-customerinsights-activity-7258336620511170560-seu5?utm_source=share&utm_medium=member_desktop" target="_blank">View</a><br>
+      <b>GitHub :</b> <a href="https://github.com/narendrabariha/E.D.A----Diwali_Sales_Analysis/tree/main" target="_blank">View Code</a>
+    </div>
+
+    <!-- Project Insights Section -->
+    <div class="headline">Project Insights:</div>
+    <div class="image-container">
+      <img id="diwali-image" src="" alt="Diwali Insight">
+      <div class="insight-text" id="diwali-insight-text">
+        <!-- Insight text dynamically inserted here -->
+      </div>
+
+      <div class="navigation-buttons">
+        <button onclick="changeDiwaliImage(-1)">Prev</button>
+        <button onclick="changeDiwaliImage(1)">Next</button>
+      </div>
+    </div>
+
+    <!-- Presentation Section -->
+    <div class="headline">Presentation:</div>
+    <div class="presentation-container">
+      <iframe id="diwali-video" src="https://www.youtube.com/embed/ary91J7pUMk" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript for Diwali Sales Analysis -->
+<script>
+  const diwaliDetails = {
+    insights: [
+      { image: 'images/d1.png', text: `The female (F) customers total 7,828, making them the majority group.The male (M) customers total 3,403, representing a smaller proportion.` },
+      { image: 'images/d2.png', text: `From above graphs we can see that most of the buyers are females and even the purchasing power of females are greater than men` },
+      { image: 'images/d3.png', text: `The 26–35 age group places the highest number of orders, with females (8,207) significantly outpacing males (3,171).Female consistently place more orders than males across all age groups.` },
+      { image: 'images/d4.png', text: `The 26-35 age group has the highest number of users, with 1386 individuals. This suggests that this demographic may be a key target for Diwali sales efforts.` },
+      { image: 'images/d5.png', text: `Overall, the chart suggests that females are more likely to be customers than males, and that the 26-35 age group is the most significant demographic for this business.` },
+      { image: 'images/d6.png', text: `Overall, the chart suggests that the 26-35 age group is the most valuable customer segment in terms of total sales amount.` },
+      { image: 'images/d7.png', text: `Overall, the chart suggests that Uttar Pradesh is the most important state for this business, contributing significantly to the total number of orders.` },
+      { image: 'images/d8.png', text: `From above graphs we can see that most of the orders & total sales/amount are from Uttar Pradesh, Maharashtra and Karnataka respectively` },
+      { image: 'images/d9.png', text: `From above graphs we can see that most of the buyers are married (women) and they have high purchasing power Occupation` },
+      { image: 'images/d10.png', text: `Overall, the chart suggests that males are more likely to be customers than females, and that the IT Sector is the most significant occupation for this business.` },
+      { image: 'images/d11.png', text: `From above graphs we can see that most of the buyers are working in IT, Healthcare and Aviation sector` },
+      { image: 'images/d12.png', text: `Overall, the chart suggests that the IT Sector is the most valuable customer segment for this business, contributing significantly to the total sales amount.` },
+      { image: 'images/d13.png', text: `From above graphs we can see that most of the sold products are from Food, Clothing and Electronics category` },
+      { image: 'images/d14.png', text: `From above graph, we can see that the highest average order amounts are observed in the Product Categories of Auto, Tupperware, and Hand & Power Tools, indicating these categories generate significant revenue per order.` },
+      { image: 'images/d15.png', text: `` },
+      { image: 'images/d16.png', text: `` },
+      { image: 'images/d17.png', text: `` },
+    ],
+  };
+
+  let currentDiwaliIndex = 0;
+
+  function openDiwaliModal() {
+    document.getElementById('diwali-insight-text').textContent = diwaliDetails.insights[currentDiwaliIndex].text;
+    document.getElementById('diwali-image').src = diwaliDetails.insights[currentDiwaliIndex].image;
+    document.getElementById('diwali-modal').style.display = 'flex';
+    document.body.classList.add('no-scroll'); // Disable body scroll
+  }
+
+  function closeDiwaliPopup(event) {
+    document.getElementById('diwali-modal').style.display = 'none';
+    const iframe = document.getElementById('diwali-video');
+    iframe.src = iframe.src; // Pause YouTube video
+    document.body.classList.remove('no-scroll'); // Re-enable body scroll
+  }
+
+  function changeDiwaliImage(direction) {
+    currentDiwaliIndex = (currentDiwaliIndex + direction + diwaliDetails.insights.length) % diwaliDetails.insights.length;
+    document.getElementById('diwali-insight-text').textContent = diwaliDetails.insights[currentDiwaliIndex].text;
+    document.getElementById('diwali-image').src = diwaliDetails.insights[currentDiwaliIndex].image;
+  }
+</script>
+
+
+
+
+
+
+
+<!-- Layoff Analysis -->
+
+<!-- Popup Modal for Layoff Analysis -->
+<div id="layoff-analysis-modal" class="popup-modal" onclick="closeLayoffPopup(event)">
+<div class="popup-content" onclick="event.stopPropagation()">
+  <span class="close-popup" onclick="closeLayoffPopup()">&times;</span>
+  <!-- Header -->
+  <div class="popup-header">Layoff Analysis</div>
+
+  <!-- Project Details Section -->
+  <div class="headline">Project Details:</div>
+  <div class="project-details">
+    The dataset covers tech company layoffs from 2020 to 2023, detailing key aspects of each event. It includes the company name, its headquarters location, and the date of the layoff announcement. The dataset specifies the industry sector, company stage (e.g., startup or growth), and the amount of funding raised in millions. It also provides data on the number of employees laid off, the total impacted workforce, and the percentage of the total workforce affected. This comprehensive overview allows for an in-depth analysis of trends, industry impacts, and the financial health of companies undergoing significant workforce reductions.
+  </div>
+
+  <!-- Tools Used -->
+  <div class="tools-used">
+    <b>Tools Used:</b> 
+<span style="background-color: #ffcc00; color: #070000; padding: 2px 5px; border-radius: 3px;">Python</span> 
+<span style="background-color: #00c4cc; color: #010000; padding: 2px 5px; border-radius: 3px;">Canva</span>
+<br>
+
+    <b>Libraries Used:</b> NumPy, Pandas, Matplotlib, Seaborn<br>
+    <b>Analysis Performed :</b> Exploratory Data Analysis (EDA), Data Visualization, Statistical Analysis<br>
+    <b>GitHub :</b> <a href="https://github.com/narendrabariha/E.D.A.---Tech-Company-Layoffs/tree/main" target="_blank">View Code</a>
+  </div>
+
+  <!-- Project Insights Section -->
+  <div class="headline">Project Insights:</div>
+  <div class="image-container">
+    <img id="layoff-image" src="" alt="Layoff Analysis Insight">
+    <div class="insight-text" id="layoff-insight-text">
+      <!-- Insight text dynamically inserted here -->
+    </div>
+
+    <div class="navigation-buttons">
+      <button onclick="changeLayoffImage(-1)">Prev</button>
+      <button onclick="changeLayoffImage(1)">Next</button>
+    </div>
+  </div>
+
+  <!-- Presentation Section -->
+  <div class="headline">Presentation:</div>
+  <div class="presentation-container">
+    <iframe id="layoff-video" src="https://www.youtube.com/embed/YOUR_VIDEO_LINK_HERE" allowfullscreen></iframe>
+  </div>
+</div>
+</div>
+
+<!-- JavaScript for Layoff Analysis -->
+<script>
+const layoffDetails = {
+  insights: [
+      { image: 'images/l1.png', text: 'The plot shows layoffs spiking in 2020 (likely due to COVID-19), then dropping with minor activity through 2021. Layoffs surged again in 2022 and peaked around early 2023, reflecting periodic economic disruptions. Overall, layoffs occur in bursts with fluctuating intensity.' },
+      { image: 'images/l2.png', text: ' From above graphs we can see that the highest layoffs occurred in January 2023 (89,554), the middle layoffs were observed in November 2022 (53,569), and the lowest layoffs happened in October 2021 (22).' },
+      { image: 'images/l3.png', text: 'The data shows that Average highest layoff rates were in June 2021 (2434.0), with significant rates in November 2021 (1035.0), and the lowest rates occurred in May 2021 (0.0).' },
+      { image: 'images/l4.png', text: 'The data indicates that the highest layoff percentages were in January 2023 (18.56%), followed by November 2022 (11.10%), and the lowest percentages were in March 2021 (0.01%).' },
+      { image: 'images/l5.png', text: 'The data reveals that the United States had the highest total layoffs (3,22,774), followed by India (42,860), with Luxembourg recording the lowest total layoffs (45).' },
+      { image: 'images/l6.png', text: 'The average layoffs by country indicate that the Netherlands had the highest average layoffs (1201.3), followed by the Cayman Islands (1000.0), with India at (219.8). Luxembourg had the lowest average layoffs at (15).' },
+      { image: 'images/l7.png', text: ' The percentage of layoffs by country shows that the United States had the highest percentage of layoffs (66.9%), followed by India (8.8%), while Austria to Finland had a minimal percentage of (0.1%).' },
+      { image: 'images/l8.png', text: 'The total layoffs by industry show that Retail had the highest number of layoffs (58,170), followed closely by Consumer (56,755). AI had no reported layoffs, while Manufacturing experienced the fewest layoffs (354).' },
+      { image: 'images/l9.png', text: 'The average layoffs by industry reveal that Hardware had the highest average layoffs (821.9), followed by Consumer (399.7) and Sales (299.8). The lowest averages were observed in Product (40.6) and AI (0.0).' },
+      { image: 'images/l10.png', text: 'The percentage of layoffs by industry shows that Retail had the highest percentage of layoffs (12.06%), followed by Consumer (11.76%) and Other (8.79%). The industries with the lowest percentages were Manufacturing (0.07%) and AI (0.00%).' },
+      { image: 'images/l11.png', text: 'The total layoffs by company show that Amazon had the highest number of layoffs (27,230), followed by Meta (21,000) and Google (12,000). The least number of layoffs was reported by Spyce with just 4.' },
+      { image: 'images/l12.png', text: '' },
+      { image: 'images/l13.png', text: '' },
+      { image: 'images/l14.png', text: 'The percentage of layoffs by company shows that Amazon had the highest percentage of layoffs (5.64%), followed by Meta (4.35%) and Google (2.49%). The lowest percentage was reported by F5 to ThredUp (0.1%).' },
+      { image: 'images/l15.png', text: 'The total layoffs by stage show that the highest number of layoffs occurred in the Post-IPO stage (2,58,688), followed by Unknown (47,138) and Acquired (42,185). The lowest numbers layoffs were observed in Seed (1,997).' },
+      { image: 'images/l16.png', text: 'The percentage of layoffs by stage shows that Post-IPO companies had the highest percentage of layoffs (53.6%), followed by Unknown (9.8%) and Acquired (8.7%). The lowest percentages were reported in Seed stage (0.4%) and Subsidiary (0.5%).' },
+      { image: 'images/l17.png', text: 'The total layoffs HQ by location show that the SF Bay Area experienced the highest number of layoffs (1,51,740), followed by Seattle (46,220) and New York City (31,484). The lowest number of layoffs was reported in Gdynia (13).' },
+      { image: 'images/l18.png', text: ' The percentage of layoffs by location HQ shows that the SF Bay Area had the highest percentage of layoffs (31.5%), followed by Seattle (9.6%) and New York City (6.5%). The lowest percentage was reported in Munich to Spokane (0.1%)' },
+      { image: 'images/l19.png', text: 'Impacted Workforce Percentage 70 %' },
+      { image: 'images/l20.png', text: 'The impacted workforce percentage data shows that the majority of layoffs had an impact of 0.00% (96,831), followed by 0.05% (37,144) and 0.10% (31,368). The least impact was observed at 0.49% (22).' },
+      { image: 'images/l21.png', text: 'The total amount $ raised by companies shows that Netflix raised the highest amount (4,87,600), followed by Uber (1,48,700) and WeWork (85,200). The lowest amount raised was by Purse to TextNow (1).' },
+      { image: 'images/l22.png', text: 'The total amount $ raised by industry shows that Media raised the highest amount (5,34,375), followed by Transportation (3,72,936) and Consumer (2,36,296). The least amount raised was in AI (131).' },
+      { image: 'images/l23.png', text: 'The total amount $ raised by country shows that the United States raised the highest amount (15,36,944), followed by India (1,97,400) and China (86,967). The lowest amount raised was in Uruguay (2).' },
+      { image: 'images/l24.png', text: 'The total amount $ raised by stage shows that Post-IPO stages raised the highest amount (1,283,886), followed by Unknown (287,830) and Series H (98,385). The lowest amount raised was in Seed (8,462).' },
+      { image: 'images/l25.png', text: 'The total amount $ raised by location shows that the SF Bay Area leads with (10,29,792), followed by New York City (140,567), Bengaluru (126,390), and London (64,980). The lowest amount raised among the listed locations is in Lagos\r (1).' },
+      { image: 'images/l26.png', text: '' },
+      { image: 'images/l27.png', text: '' },
+    ],
+  };
+
+let currentLayoffIndex = 0;
+
+function openLayoffModal() {
+  document.getElementById('layoff-insight-text').textContent = layoffDetails.insights[currentLayoffIndex].text;
+  document.getElementById('layoff-image').src = layoffDetails.insights[currentLayoffIndex].image;
+  document.getElementById('layoff-analysis-modal').style.display = 'flex';
+  document.body.classList.add('no-scroll'); // Disable body scroll
+}
+
+function closeLayoffPopup(event) {
+  document.getElementById('layoff-analysis-modal').style.display = 'none';
+  const iframe = document.getElementById('layoff-video');
+  iframe.src = iframe.src; // Pause YouTube video
+  document.body.classList.remove('no-scroll'); // Re-enable body scroll
+}
+
+function changeLayoffImage(direction) {
+  currentLayoffIndex = (currentLayoffIndex + direction + layoffDetails.insights.length) % layoffDetails.insights.length;
+  document.getElementById('layoff-insight-text').textContent = layoffDetails.insights[currentLayoffIndex].text;
+  document.getElementById('layoff-image').src = layoffDetails.insights[currentLayoffIndex].image;
+}
+</script>
+
+
+
+
+
+<!-- E-commerce Sales Analysis -->
+
+<!-- Popup Modal for E-commerce Sales Analysis -->
+<div id="ecommerce-analysis-modal" class="popup-modal" onclick="closeEcommercePopup(event)">
+<div class="popup-content" onclick="event.stopPropagation()">
+  <span class="close-popup" onclick="closeEcommercePopup()">&times;</span>
+  <!-- Header -->
+  <div class="popup-header">E-commerce Sales Analysis</div>
+
+  <!-- Project Details Section -->
+  <div class="headline">Project Details:</div>
+  <div class="project-details">
+    Target is a globally recognized brand and a leading retailer in the United States, known for offering exceptional value, inspiration, innovation, and a unique shopping experience.
+    This dataset focuses on Target's operations in Brazil, covering 100,000 orders placed between 2016 and 2018. It includes detailed information on order status, pricing, payment and shipping performance, customer locations, product attributes, and customer reviews.
+  </div>
+
+  <!-- Tools Used -->
+  <div class="tools-used">
+    <b>Tools Used:</b> 
+<span style="background-color: #ffcc00; padding: 2px 5px; border-radius: 3px;">Python</span> 
+<span style="background-color: #00758f; color: #060000; padding: 2px 5px; border-radius: 3px;">MySQL</span> 
+<span style="background-color: #d04a02; color: #0a0000; padding: 2px 5px; border-radius: 3px;">PowerPoint</span>
+<br>
+
+    <b>Libraries Used:</b> NumPy, Pandas, Matplotlib, Seaborn<br>
+    <b>Analysis Performed :</b> Exploratory Data Analysis (EDA), Data Visualization, Statistical Analysis<br>
+    <b>Project Engagement :</b> <a href="https://www.linkedin.com/posts/narendra-bariha_datascience-analytics-ecommerce-activity-7247166552741974016-zrmp?utm_source=share&utm_medium=member_desktop" target="_blank">View</a><br>
+    <b>GitHub :</b> <a href="https://github.com/narendrabariha/E.D.A.-SQL-Python-------E-commerce-Data-Analysis/blob/main/python%2Bsql_E-commerce%20Sales%20Analysis.ipynb" target="_blank">View Code </a>
+  </div>
+
+  <!-- Project Insights Section -->
+  <div class="headline">Project Insights:</div>
+  <div class="image-container">
+    <img id="ecommerce-image" src="" alt="E-commerce Sales Analysis Insight">
+    <div class="insight-text" id="ecommerce-insight-text">
+      <!-- Insight text dynamically inserted here -->
+    </div>
+
+    <div class="navigation-buttons">
+      <button onclick="changeEcommerceImage(-1)">Prev</button>
+      <button onclick="changeEcommerceImage(1)">Next</button>
+    </div>
+  </div>
+
+  <!-- Presentation Section -->
+  <div class="headline">Presentation:</div>
+  <div class="presentation-container">
+    <iframe id="ecommerce-video" src="https://www.youtube.com/embed/7HQZo9kxpes?si=tk5Tilum8g6_Yt0i" allowfullscreen></iframe>
+  </div>
+</div>
+</div>
+
+<!-- JavaScript for E-commerce Sales Analysis -->
+<script>
+const ecommerceDetails = {
+  insights: [
+      { image: 'images/e1.png', text: 'Total number of states: 27 And Total number of  cities: 4119' },
+      { image: 'images/e2.png', text: 'Bed Table Bath leads sales with ₹1.37 crore, making it the top-performing category, followed by Health Beauty at ₹1.32 crore, reflecting strong demand. Insurance and Services ranks lowest with ₹2,596.08, highlighting minimal consumer interest compared to other categories.' },
+      { image: 'images/e3.png', text: 'São Paulo (SP) leads with 83,492 customers, the largest base. Rio de Janeiro (RJ) follows with 25,704, reflecting strong engagement. Roraima (RR) has the fewest customers at 92, showing minimal market penetration.' },
+      { image: 'images/e4.png', text: 'São Paulo (SP) leads with 14,984 unique customers, highlighting a strong e-commerce market. Rio de Janeiro (RJ) follows with 6,620, showing significant demand. São Bernardo do Campo (SP) has the fewest at 908, indicating growth potential in this area.' },
+      { image: 'images/e5.png', text: 'August records the highest total orders with 21,686, marking a peak in consumer activity. May follows with 21,146 orders, possibly driven by spring promotions. In contrast, September sees the lowest at 8,610, indicating a dip in engagement that could benefit from targeted marketing efforts.' },
+      { image: 'images/e6.png', text: 'Credit cards lead with 73.92% of orders, UPI follows at 19.04%, while vouchers and debit cards account for 5.56% and 1.47%, respectively. The minimal 0.0029% in the not_defined category suggests incomplete payment data.' },
+      { image: 'images/e7.png', text: 'The average order value is highest for credit card payments at 163.32, indicating higher spending. UPI follows at 145.03, showing strong preference. Voucher payments have the lowest at 65.70, suggesting smaller purchases. Optimizing payment options could enhance customer satisfaction and boost sales.' },
+      { image: 'images/e8.png', text: 'Credit card transactions dominate with ₹25,084,170 in revenue, followed by UPI at ₹5,738,723, showing growing preference. Voucher and debit card revenues are lower at ₹758,873 and ₹435,979. Undefined payment types show no revenue, suggesting a need for process improvement.' },
+      { image: 'images/e9.png', text: 'In 2016, credit cards led with 1,032 orders, followed by UPI with 252. By 2017, credit card orders surged to 138,272, with UPI at 38,032. In 2018, credit cards grew to 167,876 orders, while UPI reached 40,852. Debit cards peaked at 4,420 orders, showing increased digital payment adoption.' },
+      { image: 'images/e10.png', text: 'São Paulo leads with credit card use (97,808 orders), while UPI grows. Credit cards dominate in key cities.' },
+      { image: 'images/e11.png', text: 'São Paulo leads with 62,160 orders, establishing itself as the dominant e-commerce hub. Rio de Janeiro follows with 27,528 orders, reflecting strong consumer interest but significantly behind São Paulo. São Bernardo do Campo records just 3,752 orders, indicating potential for growth through targeted marketing.' },
+      { image: 'images/e12.png', text: 'March recorded the highest order count with 14,422, marking peak customer engagement. January followed closely with 14,538 orders, reflecting strong post-holiday activity. October saw the lowest, with just 8 orders, indicating a significant drop in consumer purchases during that month.' },
+      { image: 'images/e13.png', text: 'The top city for average products ordered is Padre Carvalho, with an average of 28 products per order, followed by Celso Ramos and Datas with 26 and 24 products respectively.' },
+      { image: 'images/e14.png', text: 'BED TABLE BATH leads with 42.79% of total revenue, reflecting strong demand in home essentials. HEALTH BEAUTY follows at 41.41%, showing significant interest in personal care. COOL STUFF contributes 19.48%, indicating potential for targeted marketing to increase sales in this category.' },
+      { image: 'images/e15.png', text: 'The correlation coefficient of -0.106 shows a weak negative relationship between order_count and price. As average prices rise, order count slightly decreases, but the weak correlation suggests no significant impact, meaning price changes don’t strongly affect order count.' },
+      { image: 'images/e16.png', text: 'In 2016, sales grew from 1,008.96 in September to 237,449.36 by December. 2017 saw significant growth, reaching 29.23 million by year-end. By October 2018, sales surpassed 64 million, with strong contributions from January (4.46 million) and March (4.63 million).' },
+      { image: 'images/e17.png', text: 'In 2017, YoY growth in total sales was an impressive 12,112.70%, driven by a massive increase from 2016. In 2018, growth stabilized at 20.00%, showing continued momentum and a more sustainable pace for the business.' },
+      { image: 'images/e18.png', text: '' },
+      { image: 'images/e19.png', text: '' },
+     
+    ],
+  };
+
+let currentEcommerceIndex = 0;
+
+function openEcommerceModal() {
+  document.getElementById('ecommerce-insight-text').textContent = ecommerceDetails.insights[currentEcommerceIndex].text;
+  document.getElementById('ecommerce-image').src = ecommerceDetails.insights[currentEcommerceIndex].image;
+  document.getElementById('ecommerce-analysis-modal').style.display = 'flex';
+  document.body.classList.add('no-scroll'); // Disable body scroll
+}
+
+function closeEcommercePopup(event) {
+  document.getElementById('ecommerce-analysis-modal').style.display = 'none';
+  const iframe = document.getElementById('ecommerce-video');
+  iframe.src = iframe.src; // Pause YouTube video
+  document.body.classList.remove('no-scroll'); // Re-enable body scroll
+}
+
+function changeEcommerceImage(direction) {
+  currentEcommerceIndex = (currentEcommerceIndex + direction + ecommerceDetails.insights.length) % ecommerceDetails.insights.length;
+  document.getElementById('ecommerce-insight-text').textContent = ecommerceDetails.insights[currentEcommerceIndex].text;
+  document.getElementById('ecommerce-image').src = ecommerceDetails.insights[currentEcommerceIndex].image;
+}
+</script>
+
+
+
+
+
+
+
+<!-- Fraud Transaction Detection -->
+
+<!-- Popup Modal for Fraud Transaction Detection -->
+<div id="fraud-detection-modal" class="popup-modal" onclick="closeFraudDetectionPopup(event)">
+<div class="popup-content" onclick="event.stopPropagation()">
+  <span class="close-popup" onclick="closeFraudDetectionPopup()">&times;</span>
+  <!-- Header -->
+  <div class="popup-header">Fraud Transaction Detection</div>
+
+  <!-- Project Details Section -->
+  <div class="headline">Project Details:</div>
+  <div class="project-details">
+    The dataset contains transactions made by credit cards in September 2013 by European cardholders. This dataset presents transactions that occurred over two days, where we have 492 frauds out of 284,807 transactions. The dataset is highly unbalanced, with the positive class (frauds) accounting for only 0.172% of all transactions.
+   
+    It contains only numerical input variables resulting from a PCA transformation. Due to confidentiality issues, the original features and additional background information about the data are not provided.
+  
+    Features V1, V2, ..., V28 are the principal components obtained with PCA. The features Time and Amount are not transformed with PCA. Feature Time represents the seconds elapsed between each transaction and the first transaction in the dataset. The feature Amount is the transaction amount, which can be used for example-dependent cost-sensitive learning. Feature Class is the response variable, with a value of 1 indicating fraud and 0 otherwise.
+  </div>
+
+  <!-- Tools Used -->
+  <div class="tools-used">
+    <b>Tools Used:</b> 
+<span style="background-color: #ffcc00; padding: 2px 5px; border-radius: 3px;">Python</span>
+<span style="background-color: #4caf50; color: #070000; padding: 2px 5px; border-radius: 3px;">Machine Learning</span>
+<br>
+
+    <b>Libraries Used:</b> NumPy, Pandas, Seaborn, Matplotlib, Scikit-learn<br>
+    <b>Analysis Performed:</b> Exploratory Data Analysis (EDA), Machine Learning Modeling, Data Visualization<br>
+    <b>Project Engagement :</b> <a href="https://www.linkedin.com/posts/narendra-bariha_machinelearning-frauddetection-datascience-activity-7140061700778610689-G1xW?utm_source=share&utm_medium=member_desktop" target="_blank">View</a><br>
+    <b>GitHub :</b> <a href="https://github.com/narendrabariha/M.L---Fraud-Transaction-Detection/tree/main" target="_blank">View Code </a>
+  </div>
+
+  <!-- Project Insights Section -->
+  <div class="headline">Project Insights:</div>
+  <div class="image-container">
+    <img id="fraud-image" src="" alt="Fraud Detection Insight">
+    <div class="insight-text" id="fraud-insight-text">
+      <!-- Insight text dynamically inserted here -->
+    </div>
+
+    <div class="navigation-buttons">
+      <button onclick="changeFraudImage(-1)">Prev</button>
+      <button onclick="changeFraudImage(1)">Next</button>
+    </div>
+  </div>
+
+  <!-- Presentation Section -->
+  <div class="headline">Presentation:</div>
+  <div class="presentation-container">
+    <iframe id="fraud-video" src="https://www.youtube.com/embed/YOUR_VIDEO_LINK_HERE" allowfullscreen></iframe>
+  </div>
+</div>
+</div>
+
+<!-- JavaScript for Fraud Transaction Detection -->
+<script>
+const fraudDetails = {
+  insights: [
+      { image: 'images/c1.png', text: '' },
+      { image: 'images/c2.png', text: 'The chart shows that 99.83% of transactions are non-fraudulent, while only 0.17% are fraudulent. This indicates that fraudulent transactions are extremely rare compared to legitimate ones, highlighting a severe data imbalance typical in fraud detection scenarios.' },
+      { image: 'images/c3.png', text: 'The chart shows the minimum transaction amount as 0, the maximum as 25,691.16, and the average as 88.47. Most transactions are small, with occasional spikes reaching the maximum value. This indicates a highly skewed distribution of transaction amounts with rare large values.' },
+      { image: 'images/c4.png', text: '' },
+      { image: 'images/c5.png', text: '' },
+      { image: 'images/c6.png', text: 'The heatmap shows that V17, V14, V12, V10, and V3 have moderate negative correlations with the target variable (Class), suggesting relevance for fraud detection. Many features show weak correlations with Class' },
+      { image: 'images/c7.png', text: '' },
+      { image: 'images/c8.png', text: '' },
+      { image: 'images/c9.png', text: '' },
+      { image: 'images/c10.png', text: '' },
+      { image: 'images/c11.png', text: 'Handled Imbalanced Data by SMOTE' },
+      { image: 'images/c12.png', text: 'The Testing  score  is: 97.66% &  Training score is:95.79%' },
+      { image: 'images/c13.png', text: 'The Testing  score is: 99.74% & Training score is: 100.0%' },
+      { image: 'images/c14.png', text: 'The Testing  score  is: 99.95% & Training score is: 100.0%' },
+      { image: 'images/c15.png', text: '' },
+      { image: 'images/c16.png', text: '' },
+      { image: 'images/c17.png', text: '' },
+
+
+],
+};
+
+let currentFraudIndex = 0;
+
+function openFraudDetectionModal() {
+  document.getElementById('fraud-insight-text').textContent = fraudDetails.insights[currentFraudIndex].text;
+  document.getElementById('fraud-image').src = fraudDetails.insights[currentFraudIndex].image;
+  document.getElementById('fraud-detection-modal').style.display = 'flex';
+  document.body.classList.add('no-scroll'); // Disable body scroll
+}
+
+function closeFraudDetectionPopup(event) {
+  document.getElementById('fraud-detection-modal').style.display = 'none';
+  const iframe = document.getElementById('fraud-video');
+  iframe.src = iframe.src; // Pause YouTube video
+  document.body.classList.remove('no-scroll'); // Re-enable body scroll
+}
+
+function changeFraudImage(direction) {
+  currentFraudIndex = (currentFraudIndex + direction + fraudDetails.insights.length) % fraudDetails.insights.length;
+  document.getElementById('fraud-insight-text').textContent = fraudDetails.insights[currentFraudIndex].text;
+  document.getElementById('fraud-image').src = fraudDetails.insights[currentFraudIndex].image;
+}
+</script>
+
+
+</body>
+</html> 
+
+
+
+
+
+<div class="background-section" 
+   style="
+      background-image: url('./images/bg111.png'); 
+      height: 400px; 
+      max-width: 1100px; 
+      margin: 0 auto; 
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      position: relative; 
+      background-position: center; 
+      background-size: cover; 
+      background-repeat: no-repeat;">
+  
+  <!-- Top Section -->
+  <!-- <div class="text-center" style="position: absolute; top: 10%; width: 100%; text-align: center;">
+      <h2 style="color: #fff;">More projects on <span>Github</span></h2>
+  </div> -->
+
+  <!-- Bottom Section -->
+  <div class="text-center" style="position: absolute; bottom: 10%; width: 100%; text-align: center;">
+      <div style="white-space: nowrap;">
+          <!-- "30" with outline effect -->
+          <span class="number" data-number="30" 
+                style="font-size: 40px; 
+                       color: #ffffff; 
+                       font-weight: bold; 
+                       text-shadow: 2px 2px 5px rgba(154, 5, 5, 0.896), -2px -2px 5px rgba(195, 8, 8, 0.939);">
+              30
+          </span>
+          <!-- "+" with outline effect -->
+          <span style="font-size: 40px; 
+                      color: #ffffff; 
+                      font-weight: bold; 
+                      text-shadow: 1px 1px 3px rgba(220, 213, 16, 0.908), -1px -1px 3px rgba(192, 195, 10, 0.5);">
+              +
+          </span>
+          <!-- "Projects Completed" with outline effect -->
+          <span style="display: inline; 
+                     font-size: 30px; 
+                     color: #ffffff; 
+                     font-weight: bold; 
+                     text-shadow: 2px 2px 5px rgba(182, 3, 3, 0.962), -2px -2px 5px rgba(198, 5, 5, 0.887);">
+              &nbsp;Projects Completed
+            </span>
+      </div>
+      <!-- "More projects on GitHub" in bold -->
+      <div style="margin-top: 10px;">
+        <span style="font-size: 27px; 
+                     color: #f8f8f8; 
+                     font-weight: bold; 
+                     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7), -1px -1px 3px rgba(255, 255, 255, 0.5);">
+              More projects on <a href="https://github.com/narendrabariha" target="_blank" style="color: #fbc606; text-decoration: underline;"></a>
+            </span>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<p style="text-align: center; margin-top: 20px;">
+  <a href="https://github.com/narendrabariha?tab=repositories" 
+     class="btn btn-primary py-3 px-3" 
+     style="background-color: #f3c029; color: #000; padding: 15px 30px; border-radius: 5px; text-decoration: none; display: inline-block; font-weight: bold;" 
+     target="_blank" rel="noopener noreferrer">
+    Github Repo
+  </a>
+</p>
+
+
+      </div>
+
+
+
+
+
+
+      
+
+
+
+      <div class="section" id="experience">
+        <h1>My Experience</h1>
+        
+        
+
+  <!-- Access Million Pvt. Ltd. Experience -->
+  <div class="experience-content" style="background-color: #869898; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); margin-bottom: 0;">
+    <p class="fs-18" style="font-weight: bold; color: #f1df15; display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; line-height: 1.3;">
+      <span style="font-size: 25px;">Data Science Intern</span>
+      <span style="color: #fff715; font-size: 18px;">2023-2024</span>
+    </p>
+    <p class="fs-18" style="font-weight: 500; color: #f6f6f6; margin: 1; line-height: 1.3;">
+      <span style="font-size: 22px ;">Access Million Pvt. Ltd.</span>
+    </p>
+    <p style="color: #000603; margin-top: 10px; line-height: 1.6;">
+      During my internship , I focused on leveraging data science techniques to enhance marketing strategies and decision-making processes. 
+      My key contributions included:
+    </p>
+    <ul style="color: #000201; margin-left: 20px; line-height: 1.6;">
+      <li>Developed data-driven insights and strategies to optimize marketing campaigns.</li>
+      <li>Applied machine learning techniques to analyze customer behavior and preferences.</li>
+      <li>Collaborated with cross-functional teams to improve data collection and analysis processes.</li>
+    </ul>
+  </div>
+  
+  <!-- Arrow Between Sections -->
+  <div style="text-align: center; margin-top: -2px; margin-bottom: -10px;">
+    <i class="fas fa-arrow-up" style="font-size: 40px; color: #2a02db;"></i>
+  </div>
+  
+  <!-- Cognifyz Technologies Experience -->
+  <div class="experience-content" style="background-color: #869898; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); margin-bottom: 20px;">
+    <p class="fs-18" style="font-weight: bold; color: #f1df15; display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; line-height: 1.3;">
+      <span style="font-size: 25px;">Data Science Intern</span>
+      <span style="color: #fff715; font-size: 18px;">Apr 2024 - May 2024</span>
+    </p>
+    <p class="fs-18" style="font-weight: 500; color: #f9f9f9; margin: 1; line-height: 1.3;">
+      <span style="font-size: 22px;">Cognifyz Technologies</span>
+    </p>
+    <p style="color: #000000; margin-top: 10px; line-height: 1.6;">
+      As a Data Science Intern at Cognifyz Technologies, I worked on developing innovative solutions to streamline data-driven decision-making. My key achievements included:
+    </p>
+    <ul style="color: #000703; margin-left: 20px; line-height: 1.6;">
+      <li>Designed and implemented predictive models to enhance operational efficiency.</li>
+      <li>Conducted data analysis to identify trends and actionable insights for business strategies.</li>
+      <li>Created automated dashboards to visualize key performance indicators (KPIs) effectively.</li>
+    </ul>
+  </div>
+  
+  <!-- Add Font Awesome in the <head> of your HTML -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  
+  
+  
+  
+  
+
+
+    </section>
+
+</div>
+
+
+
+
+
+
+ <!-- Contact Section -->
+      <div class="section" id="contact">
+        <h1>Contact Me</h1>
+      <p>Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
+       
+        <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+          <div class="container">
+            <div class="row d-flex contact-info mb-5 justify-content-center">
+                <div class="col-md-3 d-flex ftco-animate">
+                    <div class="align-self-stretch box p-4 text-center">
+                        <div class="icon d-flex align-items-center justify-content-center">
+                            <span class="fas fa-home"></span>
+                        </div>
+                        <h3 class="mb-4">Address</h3>
+                        <p><a href="https://www.google.com/maps?q=Nagpur,+Maharashtra,+India" target="_blank">Nagpur, Maharashtra, India</a></p>
+
+                    </div>
+                </div>
+                <div class="col-md-3 d-flex ftco-animate">
+                    <div class="align-self-stretch box p-4 text-center">
+                        <div class="icon d-flex align-items-center justify-content-center">
+                            <span class="fas fa-phone-alt"></span>
+                        </div>
+                        <h3 class="mb-4">Call me</h3>
+                        <p><a href="tel:+919834460597">+91 9834460597</a></p>
+                    </div>
+                </div>
+                <div class="col-md-3 d-flex ftco-animate">
+                    <div class="align-self-stretch box p-4 text-center">
+                        <div class="icon d-flex align-items-center justify-content-center">
+                            <span class="fas fa-envelope"></span>
+                        </div>
+                        <h3 class="mb-4">Mail me</h3>
+                        <p><a href="https://mail.google.com/mail/?view=cm&fs=1&to=narendrabarihan@gmail.com" target="_blank">narendrabarihan@gmail.com</a></p>
+
+                    </div>
+                </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+
+
+
+
+
+
+
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+
+<div class="section" id="special-offer">
+  <h1  style="color: #160bed; ">Special Offer</h1>
+
+
+  <!-- Like Button Section -->
+  <div style="text-align: center; margin-top: 30px;">
+    <h3 style="font-weight: bold; font-size: 25px;">Did you like this Portfolio?</h3>
+    <button id="love-button" style="background: none; border: none; cursor: pointer; outline: none;">
+      <i class="fa fa-heart" id="love-icon" style="font-size: 36px; color: rgb(165, 165, 165);"></i>
+    </button>
+    <p id="love-count" style="font-size: 18px; margin-top: 10px; font-weight: bold;">Loading...</p>
+  </div>
+
+  <!-- Add Font Awesome for the heart icon -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+
+  <script>
+    // Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyDnvbX3-hTidBMvVXceTELHeTT6ArOdYyI",
+      authDomain: "count1-8bc86.firebaseapp.com",
+      databaseURL: "https://count1-8bc86-default-rtdb.firebaseio.com",
+      projectId: "count1-8bc86",
+      storageBucket: "count1-8bc86.firebasestorage.app",
+      messagingSenderId: "951674163070",
+      appId: "1:951674163070:web:084124a071d303592fed2f"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const database = firebase.database();
+
+    // References
+    const loveButton = document.getElementById("love-button");
+    const loveIcon = document.getElementById("love-icon");
+    const loveCountDisplay = document.getElementById("love-count");
+
+    // Fetch the current like count
+    const likeCountRef = database.ref('likeCount');
+    likeCountRef.on('value', (snapshot) => {
+      const likeCount = snapshot.val() || 11037; // Default to 11037 if null
+      loveCountDisplay.textContent = `${likeCount} Likes`;
+    });
+
+    // Handle like button click
+    loveButton.addEventListener('click', () => {
+      likeCountRef.transaction((currentLikes) => {
+        if (currentLikes === null) {
+          return 11037 + 1; // If no value, start from 11037
+        }
+        return currentLikes + 1; // Increment like count
+      });
+      loveIcon.style.color = "#e74c3c"; // Change heart color to red
+    });
+  </script>
+
+
+
+
+<!-- Portfolio Creation Offer -->
+<div style="text-align: center; margin: 50px 0; padding: 20px; border: 2px dashed #000000; border-radius: 10px; background-color: #f9f9f9;">
+  <div style="font-size: 40px; color: #000; margin-bottom: 10px;">
+    <span class="fas fa-tags"></span>
+  </div>
+  <h3 style="font-size: 24px; color: #050000; margin-bottom: 10px;">Want a Portfolio Like This?</h3>
+  <p style="font-size: 18px; color: #060600; margin-bottom: 20px;">
+    I can create a professional portfolio for you! <br>
+    <strong>Special offer:</strong> 
+    <del style="color: #e74c3c;">₹8000</del> 
+    <span style="color: #4505c3;">₹500</span>.
+  </p>
+  <a href="https://www.linkedin.com/in/narendra-bariha/" 
+     target="_blank" 
+     style="display: inline-block; text-decoration: none; background-color: #0077b5; color: #fff; padding: 10px 20px; border-radius: 5px; font-size: 18px; font-weight: bold;">
+    Message Me on LinkedIn
+  </a>
+</div>
+
+
+<!-- Special Offer Section -->
+<div style="text-align: center; margin: 50px 0; padding: 20px; border: 2px dashed #000000; border-radius: 10px; background-color: #f9f9f9;">
+  <h3 style="font-size: 24px; color: #040000;">Do you need an ATS-friendly resume?</h3>
+  <p style="font-size: 18px; color: #000000; line-height: 1.6;">
+    I am an ATS resume writer! <br>
+    I can craft a professional, ATS-friendly resume for you! 
+    <strong>Special offer:</strong> <del style="color: #e74c3c;">₹1000</del> <span style="color: #4505c3;">₹100</span>.
+    <br>Guaranteed <strong style="color: #1c23f8; font-size: 20px;">80+</strong> ATS score!
+  </p>
+  <a href="https://www.linkedin.com/in/narendra-bariha/" 
+     target="_blank" 
+     style="display: inline-block; text-decoration: none; background-color: #0077b5; color: #fff; padding: 10px 20px; border-radius: 5px; font-size: 18px; font-weight: bold;">
+    Message Me on LinkedIn
+  </a>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+      <!-- Special Offer Section -->
+
+<!--       
+<div class="section" id="special-offer">
+  <h1 style="text-align: ; margin-bottom: 20px;">Special Offer</h1>
+  
+  <div style="text-align: center; margin: 50px 0; padding: 20px; border: 2px dashed #000000; border-radius: 10px; background-color: #f9f9f9;">
+    <div style="font-size: 40px; color: #000; margin-bottom: 10px;">
+      <span class="fas fa-tags"></span>
+    </div>
+    <h3 style="font-size: 24px; color: #050000; margin-bottom: 10px;">Want a Portfolio Like This?</h3>
+    <p style="font-size: 18px; color: #060600; margin-bottom: 20px;">
+      I can create a professional portfolio for you! <br>
+      <strong>Special offer:</strong> 
+      <del style="color: #e74c3c;">₹3000</del> 
+      <span style="color: #4505c3;">₹500</span>.
+    </p>
+    <a href="https://www.linkedin.com/in/narendra-bariha/" 
+       target="_blank" 
+       style="display: inline-block; text-decoration: none; background-color: #0077b5; color: #fff; padding: 10px 20px; border-radius: 5px; font-size: 18px; font-weight: bold;">
+      Message Me on LinkedIn
+    </a>
+  </div>
+</div> -->
+
+
+
+
+
+  <style>
+    .ftco-footer.ftco-section {
+        background-color: #f8f9fa; /* Light background for the footer */
+        padding: 20px 0; /* Adds vertical spacing */
+        border-top: 2px solid #e0e0e0; /* Adds a subtle border at the top */
+    }
+    
+    .ftco-footer.ftco-section p {
+        font-size: 16px; /* Adjusts the general text size in the footer */
+        line-height: 1.6;
+        color: #010000; /* Footer text color */
+        margin: 0; /* Removes extra margin */
+        text-align: center; /* Centers the text */
+    }
+    
+    .ftco-footer.ftco-section a {
+        color: #1752b8; /* Hyperlink color */
+        text-decoration: none; /* Removes underline */
+        font-weight: bold;
+    }
+    
+    .ftco-footer.ftco-section a:hover {
+        color: #0080ff; /* Hover effect for links */
+        text-decoration: underline;
+    }
+    
+    .ftco-footer.ftco-section small i {
+        font-size: 14px; /* Privacy Policy font size */
+        color: #040000; /* Privacy text color */
+        display: block; /* Ensures privacy text starts on a new line */
+        margin-top: 10px; /* Adds spacing above the privacy text */
+    }
+    
+    .ftco-footer.ftco-section strong {
+        color: #cf1313; /* Bold text color */
+    }
+    
+    </style>
+    
+    <footer class="ftco-footer ftco-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>
+                        Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | This Portfolio is developed by 
+                        <strong><a href="https://www.linkedin.com/in/narendra-bariha/" target="_blank" rel="noopener noreferrer">Narendra Bariha</a></strong>
+                    </p>
+                    <small><i>
+                        <strong>Privacy Policy:</strong> All information provided on this portfolio, including images, text, code, and design, is the exclusive property of the creator. Stealing, unauthorized use, reproduction, or redistribution of any content without explicit permission is strictly prohibited. Any misuse, including copying or theft of intellectual property, may result in legal action. For inquiries or permissions, please contact the creator directly through the provided contact information.
+                    </i></small>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Views</title>
+    <style>
+        .views-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            font-size: 9px;
+            font-weight: bold;
+        }
+        .views-container .view-item {
+            margin: 0 15px;
+            color: #007bff;
+            text-align: center;
+        }
+        .views-container .view-item span {
+            font-size: 9px;
+            color: #655959;
+        }
+    </style>
+</head>
+<body>
+    <div class="views-container">
+        <div class="view-item">M: <span id="myViews">0</span></div>
+        <div class="view-item">O: <span id="othersViews">0</span></div>
+    </div>
+
+    <script type="module">
+        // Import Firebase dependencies
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+        import { getDatabase, ref, onValue, runTransaction } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
+
+        // Firebase Configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDGEcN6tyCvDH6fcaylitRw_R2X0MOXxUA",
+            authDomain: "first1-652ef.firebaseapp.com",
+            databaseURL: "https://first1-652ef-default-rtdb.firebaseio.com",
+            projectId: "first1-652ef",
+            storageBucket: "first1-652ef.appspot.com",
+            messagingSenderId: "193166080297",
+            appId: "1:193166080297:web:2262e6e5abfb04b1fddf38"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+        // References to Firebase database nodes
+        const othersRef = ref(database, 'totalViews/others');
+        const myRef = ref(database, 'totalViews/my');
+
+        // Update view counts
+        function updateViewCounts() {
+            // Increment "others" views if the user hasn't visited before
+            if (!localStorage.getItem('hasVisited')) {
+                runTransaction(othersRef, (currentViews) => (currentViews || 0) + 1);
+                localStorage.setItem('hasVisited', 'true');
+            }
+
+            // Increment "my" views
+            runTransaction(myRef, (currentViews) => (currentViews || 0) + 1);
+        }
+
+        // Real-time listener for "my" views
+        onValue(myRef, (snapshot) => {
+            document.getElementById('myViews').innerText = snapshot.val() || 0;
+        });
+
+        // Real-time listener for "others" views
+        onValue(othersRef, (snapshot) => {
+            document.getElementById('othersViews').innerText = snapshot.val() || 0;
+        });
+
+        // Initialize view counts on page load
+        updateViewCounts();
+    </script>
+</body>
+</html>
+
+    </footer>
+    
+
+
+
+  </section>
+  
+  <!-- CSS Styles -->
+  <style>
+  /* Define CSS variables for text and background colors */
+  :root {
+      --contact-icon-bg-color: #1c1609; /* Default icon background color */
+      --contact-icon-color: #ebcd0d; /* Default icon color */
+      --contact-heading-color: black; /* Bold headings color */
+  }
+  
+  /* General contact section styling */
+  #contact-section {
+      color: var(--contact-heading-color);
+  }
+  
+  /* Style for icons with adjustable background color */
+  #contact-section .icon {
+      background-color: var(--contact-icon-bg-color);
+      color: var(--contact-icon-color);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 10px auto; /* Center icons */
+  }
+  
+  /* Bold headings (e.g., Address, Contact Number, Email Address) */
+  #contact-section h3 {
+      font-weight: bold;
+      color: var(--contact-heading-color);
+  }
+  
+  /* Adjust text color for links */
+  #contact-section a {
+      color: var(--contact-heading-color);
+      text-decoration: none;
+  }
+  
+  /* Optional: Add hover effect for links */
+  #contact-section a:hover {
+      text-decoration: underline;
+  }
+  
+  /* Adjust the layout for icon and text alignment */
+  #contact-section .box {
+      text-align: center;
+      padding: 20px;
+  }
+  
+  #contact-section p {
+      margin: 0;
+  }
+  </style>
+      </div>
+    </div>
+  </div>
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <!-- Sidebar (Only Icons) -->
+  <div class="sidebar">
+    <a href="#home" data-tooltip="Home"><i class="fas fa-home"></i></a>
+    <a href="#about" data-tooltip="About"><i class="fas fa-user"></i></a>
+    <a href="#education" data-tooltip="Education"><i class="fas fa-graduation-cap"></i></a>
+    <a href="#skills" data-tooltip="Skills"><i class="fas fa-laptop-code"></i></a>
+    <a href="#certificates" data-tooltip="Certificates"><i class="fas fa-certificate"></i></a>
+    <a href="#projects" data-tooltip="Projects"><i class="fas fa-project-diagram"></i></a>
+    <a href="#experience" data-tooltip="Experience"><i class="fas fa-briefcase"></i></a>
+    <a href="#contact" data-tooltip="Contact"><i class="fas fa-envelope"></i></a>
+  </div>
+
+</body>
+</html>
+
+
+
