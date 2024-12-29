@@ -549,28 +549,23 @@
   </div>
 
     
- <!-- Education Section -->
+<!-- Education Section -->
 <div class="section" id="education">
   <h1>Education</h1>
   
   <!-- Displaying the College Logo -->
-  <div 
-    class="college-logo"
-    style="
-      height: 100px; 
-      max-width: 500px; 
-      margin: 0 auto 10px 0; 
-      display: flex; 
-      justify-content: flex-start; 
-      align-items: flex-start; 
-      position: relative; 
-      background-image: url('images/college1.png'); 
-      background-position: center; 
-      background-size: cover; 
-      background-repeat: no-repeat;
-    ">
-    <!-- Optional alternative text for accessibility -->
-    <span style="visibility: hidden;">College Logo</span>
+  <div style="text-align: center;">
+    <img 
+      src="images/college1.png" 
+      alt="College Logo" 
+      style="
+        max-width: 500px; 
+        width: 100%; 
+        height: auto; 
+        display: block; 
+        margin: 0 auto;
+      "
+    >
   </div>
   
   <!-- Education Details -->
@@ -578,29 +573,19 @@
   <p><strong>CGPA:</strong> 8.3</p>
 </div>
 
-<!-- Responsive CSS -->
+<!-- Responsive CSS (if required for further styling) -->
 <style>
   /* Default for larger screens */
-  .college-logo {
-    height: 100px;
+  img {
     max-width: 500px;
+    width: 100%; /* Ensures image resizes to fit container */
+    height: auto; /* Maintains aspect ratio */
   }
 
-  /* Responsive design for smaller screens (mobile) */
+  /* Responsive design for smaller screens */
   @media (max-width: 768px) {
-    .college-logo {
-      height: 80px; /* Adjust height for tablets */
-      width: 100%; /* Full width on mobile */
-      max-width: none; /* Remove max-width restriction */
-      background-size: cover; /* Ensure background covers container */
-    }
-  }
-
-  @media (max-width: 480px) {
-    .college-logo {
-      height: 60px; /* Smaller height for small phones */
-      width: 100%; /* Ensure it fits the mobile screen */
-      max-width: none;
+    img {
+      max-width: 100%; /* Ensure it fully adapts to smaller devices */
     }
   }
 </style>
