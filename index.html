@@ -551,14 +551,32 @@
      <!-- Education Section -->
 <div class="section" id="education">
   <h1>Education</h1>
-  
- <div class="transparent-container">
+
+  <!-- Image Box -->
+  <div class="image-box">
     <img src="images/college1.png" alt="College Logo">
   </div>
+
   <p><strong>B.E. in Mechanical Engineering</strong></p>
   <p><strong>CGPA:</strong> 8.3</p>
 </div>
 
+<style>
+  .image-box {
+    width: 650px; /* Fixed width for the box */
+    height: 130px; /* Fixed height for the box */
+    display: flex;
+    justify-content: center; /* Centers the image horizontally */
+    align-items: center; /* Centers the image vertically */
+    overflow: hidden; /* Ensures image doesn't overflow the box */
+  }
+
+  .image-box img {
+    width: 100%; /* Makes image fill the container */
+    height: 100%; /* Makes image fill the container */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+  }
+</style>
 
       <!-- Skills Section -->
       <div class="section" id="skills">
