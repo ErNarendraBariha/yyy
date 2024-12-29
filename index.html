@@ -549,7 +549,7 @@
   </div>
 
     
-   <!-- Education Section -->
+ <!-- Education Section -->
 <div class="section" id="education">
   <h1>Education</h1>
   
@@ -589,19 +589,22 @@
   /* Responsive design for smaller screens (mobile) */
   @media (max-width: 768px) {
     .college-logo {
-      height: 80px; /* Adjust the height for mobile */
-      max-width: 100%; /* Image will scale to fit the screen width */
-      margin: 0 auto; /* Center the logo on smaller screens */
-      background-size: contain; /* Ensure the entire image fits inside the container */
+      height: 80px; /* Adjust height for tablets */
+      width: 100%; /* Full width on mobile */
+      max-width: none; /* Remove max-width restriction */
+      background-size: cover; /* Ensure background covers container */
     }
   }
 
   @media (max-width: 480px) {
     .college-logo {
-      height: 60px; /* Smaller height for very small screens */
+      height: 60px; /* Smaller height for small phones */
+      width: 100%; /* Ensure it fits the mobile screen */
+      max-width: none;
     }
   }
 </style>
+
 
 
       <!-- Skills Section -->
