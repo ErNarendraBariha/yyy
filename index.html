@@ -549,22 +549,23 @@
   </div>
 
     
-    <!-- Education Section -->
+   <!-- Education Section -->
 <div class="section" id="education">
   <h1>Education</h1>
   
   <!-- Displaying the College Logo -->
   <div 
+    class="college-logo"
     style="
       height: 100px; 
-      max-width:500px; 
-      margin: 0 auto; 
+      max-width: 500px; 
+      margin: 0 auto 10px 0; 
       display: flex; 
-      justify-content:right ; 
-      align-items:left ; 
+      justify-content: flex-start; 
+      align-items: flex-start; 
       position: relative; 
       background-image: url('images/college1.png'); 
-      background-position: ; 
+      background-position: center; 
       background-size: cover; 
       background-repeat: no-repeat;
     ">
@@ -576,6 +577,32 @@
   <p><strong>B.E. in Mechanical Engineering</strong></p>
   <p><strong>CGPA:</strong> 8.3</p>
 </div>
+
+<!-- Responsive CSS -->
+<style>
+  /* Default for larger screens */
+  .college-logo {
+    height: 100px;
+    max-width: 500px;
+  }
+
+  /* Responsive design for smaller screens (mobile) */
+  @media (max-width: 768px) {
+    .college-logo {
+      height: 80px; /* Adjust the height for mobile */
+      max-width: 100%; /* Image will scale to fit the screen width */
+      margin: 0 auto; /* Center the logo on smaller screens */
+      background-size: contain; /* Ensure the entire image fits inside the container */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .college-logo {
+      height: 60px; /* Smaller height for very small screens */
+    }
+  }
+</style>
+
 
       <!-- Skills Section -->
       <div class="section" id="skills">
